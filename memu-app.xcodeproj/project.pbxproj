@@ -14,6 +14,7 @@
 		16A2B0922BE9E079007ED34E /* memu_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B0912BE9E079007ED34E /* memu_appTests.swift */; };
 		16A2B09C2BE9E079007ED34E /* memu_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */; };
 		16A2B09E2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */; };
+		CE3167622BEB428F00FF6905 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3167612BEB428F00FF6905 /* Title.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		16A2B0972BE9E079007ED34E /* memu-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "memu-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITests.swift; sourceTree = "<group>"; };
 		16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE3167612BEB428F00FF6905 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		16A2B07E2BE9E077007ED34E /* memu-app */ = {
 			isa = PBXGroup;
 			children = (
+				CE31675F2BEB424B00FF6905 /* Components */,
 				16A2B07F2BE9E077007ED34E /* memu_appApp.swift */,
 				16A2B0812BE9E077007ED34E /* ContentView.swift */,
 				16A2B0832BE9E079007ED34E /* Assets.xcassets */,
@@ -127,6 +130,22 @@
 				16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */,
 			);
 			path = "memu-appUITests";
+			sourceTree = "<group>";
+		};
+		CE31675F2BEB424B00FF6905 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CE3167602BEB427100FF6905 /* Title */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CE3167602BEB427100FF6905 /* Title */ = {
+			isa = PBXGroup;
+			children = (
+				CE3167612BEB428F00FF6905 /* Title.swift */,
+			);
+			path = Title;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */,
+				CE3167622BEB428F00FF6905 /* Title.swift in Sources */,
 				16A2B0802BE9E077007ED34E /* memu_appApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,10 +454,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coffeewithegg.memu-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -472,10 +492,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.coffeewithegg.memu-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
