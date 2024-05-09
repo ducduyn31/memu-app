@@ -14,7 +14,6 @@
 		16A2B0922BE9E079007ED34E /* memu_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B0912BE9E079007ED34E /* memu_appTests.swift */; };
 		16A2B09C2BE9E079007ED34E /* memu_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */; };
 		16A2B09E2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */; };
-		A323501F2BEBAEAD00402FB8 /* ListSettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323501E2BEBAEAD00402FB8 /* ListSettingItem.swift */; };
 		A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350232BEBAF9C00402FB8 /* HistoryList.swift */; };
 		A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350252BEBAFD400402FB8 /* HistoryListItem.swift */; };
 		A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350272BEBB01100402FB8 /* VideoButton.swift */; };
