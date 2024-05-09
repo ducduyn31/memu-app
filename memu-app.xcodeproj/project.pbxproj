@@ -17,7 +17,12 @@
 		A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350232BEBAF9C00402FB8 /* HistoryList.swift */; };
 		A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350252BEBAFD400402FB8 /* HistoryListItem.swift */; };
 		A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350272BEBB01100402FB8 /* VideoButton.swift */; };
-		A323502A2BEC643C00402FB8 /* ListSettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350292BEC643C00402FB8 /* ListSettingItem.swift */; };
+		A323503F2BEC79E900402FB8 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323503A2BEC79E900402FB8 /* HistoryView.swift */; };
+		A32350402BEC79E900402FB8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323503C2BEC79E900402FB8 /* SettingsView.swift */; };
+		A32350442BEC7B1300402FB8 /* ListSettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350432BEC7B1300402FB8 /* ListSettingItem.swift */; };
+		A32350462BEC7B4E00402FB8 /* ListSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350452BEC7B4E00402FB8 /* ListSettings.swift */; };
+		A32350492BEC7DA000402FB8 /* HistorySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350482BEC7DA000402FB8 /* HistorySession.swift */; };
+		A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */; };
 		A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A7CB22BE9E384005AE095 /* UserProfile.swift */; };
 		CE3167622BEB428F00FF6905 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3167612BEB428F00FF6905 /* Title.swift */; };
 /* End PBXBuildFile section */
@@ -51,11 +56,15 @@
 		16A2B0972BE9E079007ED34E /* memu-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "memu-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITests.swift; sourceTree = "<group>"; };
 		16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A323501E2BEBAEAD00402FB8 /* ListSettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingItem.swift; sourceTree = "<group>"; };
 		A32350232BEBAF9C00402FB8 /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		A32350252BEBAFD400402FB8 /* HistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListItem.swift; sourceTree = "<group>"; };
 		A32350272BEBB01100402FB8 /* VideoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoButton.swift; sourceTree = "<group>"; };
-		A32350292BEC643C00402FB8 /* ListSettingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListSettingItem.swift; path = "memu-app/Components/Settings/ListSettings/ListSettingItem.swift"; sourceTree = SOURCE_ROOT; };
+		A323503A2BEC79E900402FB8 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		A323503C2BEC79E900402FB8 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A32350432BEC7B1300402FB8 /* ListSettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingItem.swift; sourceTree = "<group>"; };
+		A32350452BEC7B4E00402FB8 /* ListSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettings.swift; sourceTree = "<group>"; };
+		A32350482BEC7DA000402FB8 /* HistorySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySession.swift; sourceTree = "<group>"; };
+		A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingSession.swift; sourceTree = "<group>"; };
 		A34A7CB22BE9E384005AE095 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CE3167612BEB428F00FF6905 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +117,7 @@
 		16A2B07E2BE9E077007ED34E /* memu-app */ = {
 			isa = PBXGroup;
 			children = (
+				A323503E2BEC79E900402FB8 /* Views */,
 				A34A7CAB2BE9E2F1005AE095 /* Components */,
 				16A2B07F2BE9E077007ED34E /* memu_appApp.swift */,
 				16A2B0812BE9E077007ED34E /* ContentView.swift */,
@@ -143,14 +153,6 @@
 			path = "memu-appUITests";
 			sourceTree = "<group>";
 		};
-		A32350202BEBAF0700402FB8 /* ListSetting */ = {
-			isa = PBXGroup;
-			children = (
-				A32350292BEC643C00402FB8 /* ListSettingItem.swift */,
-			);
-			path = ListSetting;
-			sourceTree = "<group>";
-		};
 		A32350212BEBAF1800402FB8 /* VideoButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,19 +161,48 @@
 			path = VideoButton;
 			sourceTree = "<group>";
 		};
-		A32350222BEBAF7600402FB8 /* HistoryListItem */ = {
+		A323503B2BEC79E900402FB8 /* HistoryView */ = {
 			isa = PBXGroup;
 			children = (
-				A32350252BEBAFD400402FB8 /* HistoryListItem.swift */,
+				A323503A2BEC79E900402FB8 /* HistoryView.swift */,
 			);
-			path = HistoryListItem;
+			path = HistoryView;
+			sourceTree = "<group>";
+		};
+		A323503D2BEC79E900402FB8 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				A323503C2BEC79E900402FB8 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		A323503E2BEC79E900402FB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A323503B2BEC79E900402FB8 /* HistoryView */,
+				A323503D2BEC79E900402FB8 /* SettingsView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A32350472BEC7CF500402FB8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A32350232BEBAF9C00402FB8 /* HistoryList.swift */,
+				A32350252BEBAFD400402FB8 /* HistoryListItem.swift */,
+				A32350482BEC7DA000402FB8 /* HistorySession.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 		A34A7CAB2BE9E2F1005AE095 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				A34A7CAC2BE9E311005AE095 /* Settings */,
-				A34A7CAD2BE9E31A005AE095 /* List */,
+				A32350472BEC7CF500402FB8 /* History */,
+				A32350212BEBAF1800402FB8 /* VideoButton */,
+				A34A7CB12BE9E356005AE095 /* Profile */,
 				CE3167602BEB427100FF6905 /* Title */,
 			);
 			path = Components;
@@ -180,29 +211,11 @@
 		A34A7CAC2BE9E311005AE095 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A34A7CB12BE9E356005AE095 /* Profile */,
-				A34A7CB02BE9E349005AE095 /* ListSettings */,
+				A32350452BEC7B4E00402FB8 /* ListSettings.swift */,
+				A32350432BEC7B1300402FB8 /* ListSettingItem.swift */,
+				A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		A34A7CAD2BE9E31A005AE095 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				A32350222BEBAF7600402FB8 /* HistoryListItem */,
-				A32350212BEBAF1800402FB8 /* VideoButton */,
-				A32350202BEBAF0700402FB8 /* ListSetting */,
-				A32350232BEBAF9C00402FB8 /* HistoryList.swift */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
-		A34A7CB02BE9E349005AE095 /* ListSettings */ = {
-			isa = PBXGroup;
-			children = (
-				A323501E2BEBAEAD00402FB8 /* ListSettingItem.swift */,
-			);
-			path = ListSettings;
 			sourceTree = "<group>";
 		};
 		A34A7CB12BE9E356005AE095 /* Profile */ = {
@@ -353,12 +366,16 @@
 			files = (
 				A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */,
 				16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */,
-				A323501F2BEBAEAD00402FB8 /* ListSettingItem.swift in Sources */,
 				CE3167622BEB428F00FF6905 /* Title.swift in Sources */,
+				A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */,
 				16A2B0802BE9E077007ED34E /* memu_appApp.swift in Sources */,
 				A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */,
+				A32350462BEC7B4E00402FB8 /* ListSettings.swift in Sources */,
+				A32350442BEC7B1300402FB8 /* ListSettingItem.swift in Sources */,
+				A32350402BEC79E900402FB8 /* SettingsView.swift in Sources */,
 				A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */,
-				A323502A2BEC643C00402FB8 /* ListSettingItem.swift in Sources */,
+				A32350492BEC7DA000402FB8 /* HistorySession.swift in Sources */,
+				A323503F2BEC79E900402FB8 /* HistoryView.swift in Sources */,
 				A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

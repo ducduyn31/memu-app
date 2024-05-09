@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-struct HistorySession: Identifiable {
-    var id = UUID()
-    
-    let imagePath: String
-    let lastTime: String
-    let lastMessage: String
-}
-
 struct HistoryListItem: View {
     @State var isSelected = false
     var session: HistorySession? = nil
