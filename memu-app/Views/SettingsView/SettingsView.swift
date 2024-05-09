@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("name") var name: String = "Anna Lee"
-    
     let mockSettings: [ListSettingSession] = [
-        ListSettingSession(imageName: "person.crop.circle", titleMessage: "Account", screen: .account),
-        ListSettingSession(imageName: "hand.thumbsup.circle", titleMessage: "Subscriptions", screen: .subscription),
-        ListSettingSession(imageName: "note.text", titleMessage: "Privacy & Policies", screen: .privacy),
-        ListSettingSession(imageName: "exclamationmark.circle.fill", titleMessage: "About Memu", screen: .about),
+        ListSettingSession(imageName: "person.crop.circle", titleMessage: "Account"),
+        ListSettingSession(imageName: "hand.thumbsup.circle", titleMessage: "Subscriptions"),
+        ListSettingSession(imageName: "note.text", titleMessage: "Privacy & Policies"),
+        ListSettingSession(imageName: "exclamationmark.circle.fill", titleMessage: "About Memu"),
     ]
-    
+
     var body: some View {
         NavigationStack{
             ZStack {
@@ -27,7 +25,7 @@ struct SettingsView: View {
                             .frame(width:64,height:64)
                             .clipShape(.circle)
                             .padding()
-                        Text(name)
+                        Text("Anna Lee")
                             .font(.headline)
                             .foregroundColor(.black)
                             .fontWeight(.semibold)
