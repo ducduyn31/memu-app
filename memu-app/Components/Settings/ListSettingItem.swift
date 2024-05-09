@@ -6,11 +6,6 @@
 //
 
 import SwiftUI
-struct ListSettingSession: Identifiable {
-    var id = UUID()
-    let imageName: String
-    let titleMessage: String
-}
 
 struct ListSettingItem: View {
     var session: ListSettingSession? = nil
