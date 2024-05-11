@@ -14,6 +14,7 @@
 		16A2B0922BE9E079007ED34E /* memu_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B0912BE9E079007ED34E /* memu_appTests.swift */; };
 		16A2B09C2BE9E079007ED34E /* memu_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */; };
 		16A2B09E2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */; };
+		949DA73E2BEF4E1F008F12B5 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DA73D2BEF4E1F008F12B5 /* TranslatorView.swift */; };
 		A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350232BEBAF9C00402FB8 /* HistoryList.swift */; };
 		A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350252BEBAFD400402FB8 /* HistoryListItem.swift */; };
 		A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350272BEBB01100402FB8 /* VideoButton.swift */; };
@@ -57,6 +58,7 @@
 		16A2B0972BE9E079007ED34E /* memu-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "memu-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITests.swift; sourceTree = "<group>"; };
 		16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		949DA73D2BEF4E1F008F12B5 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
 		A32350232BEBAF9C00402FB8 /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		A32350252BEBAFD400402FB8 /* HistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListItem.swift; sourceTree = "<group>"; };
 		A32350272BEBB01100402FB8 /* VideoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoButton.swift; sourceTree = "<group>"; };
@@ -156,6 +158,14 @@
 			path = "memu-appUITests";
 			sourceTree = "<group>";
 		};
+		949DA73C2BEF4E14008F12B5 /* TranslatorView */ = {
+			isa = PBXGroup;
+			children = (
+				949DA73D2BEF4E1F008F12B5 /* TranslatorView.swift */,
+			);
+			path = TranslatorView;
+			sourceTree = "<group>";
+		};
 		A32350212BEBAF1800402FB8 /* VideoButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +193,7 @@
 		A323503E2BEC79E900402FB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				949DA73C2BEF4E14008F12B5 /* TranslatorView */,
 				A323503B2BEC79E900402FB8 /* HistoryView */,
 				A323503D2BEC79E900402FB8 /* SettingsView */,
 			);
@@ -387,6 +398,7 @@
 				16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */,
 				CE3167622BEB428F00FF6905 /* Title.swift in Sources */,
 				A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */,
+				949DA73E2BEF4E1F008F12B5 /* TranslatorView.swift in Sources */,
 				16A2B0802BE9E077007ED34E /* memu_appApp.swift in Sources */,
 				A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */,
 				A32350462BEC7B4E00402FB8 /* ListSettings.swift in Sources */,
