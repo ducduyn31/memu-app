@@ -25,6 +25,7 @@
 		A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */; };
 		A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A7CB22BE9E384005AE095 /* UserProfile.swift */; };
 		CE3167622BEB428F00FF6905 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3167612BEB428F00FF6905 /* Title.swift */; };
+		CED02CC82BEEF46000F18D23 /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED02CC72BEEF46000F18D23 /* H264Encoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingSession.swift; sourceTree = "<group>"; };
 		A34A7CB22BE9E384005AE095 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CE3167612BEB428F00FF6905 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		CED02CC72BEEF46000F18D23 /* H264Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H264Encoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		16A2B07E2BE9E077007ED34E /* memu-app */ = {
 			isa = PBXGroup;
 			children = (
+				CED02CC52BEEF43D00F18D23 /* Helpers */,
 				A323503E2BEC79E900402FB8 /* Views */,
 				A34A7CAB2BE9E2F1005AE095 /* Components */,
 				16A2B07F2BE9E077007ED34E /* memu_appApp.swift */,
@@ -232,6 +235,22 @@
 				CE3167612BEB428F00FF6905 /* Title.swift */,
 			);
 			path = Title;
+			sourceTree = "<group>";
+		};
+		CED02CC52BEEF43D00F18D23 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CED02CC62BEEF44B00F18D23 /* H264Encoder */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CED02CC62BEEF44B00F18D23 /* H264Encoder */ = {
+			isa = PBXGroup;
+			children = (
+				CED02CC72BEEF46000F18D23 /* H264Encoder.swift */,
+			);
+			path = H264Encoder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +393,7 @@
 				A32350442BEC7B1300402FB8 /* ListSettingItem.swift in Sources */,
 				A32350402BEC79E900402FB8 /* SettingsView.swift in Sources */,
 				A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */,
+				CED02CC82BEEF46000F18D23 /* H264Encoder.swift in Sources */,
 				A32350492BEC7DA000402FB8 /* HistorySession.swift in Sources */,
 				A323503F2BEC79E900402FB8 /* HistoryView.swift in Sources */,
 				A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */,
