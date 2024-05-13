@@ -24,6 +24,7 @@
 		A32350462BEC7B4E00402FB8 /* ListSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350452BEC7B4E00402FB8 /* ListSettings.swift */; };
 		A32350492BEC7DA000402FB8 /* HistorySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350482BEC7DA000402FB8 /* HistorySession.swift */; };
 		A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */; };
+		A323504E2BF0A50500402FB8 /* GlowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323504D2BF0A50500402FB8 /* GlowButton.swift */; };
 		A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A7CB22BE9E384005AE095 /* UserProfile.swift */; };
 		CE3167622BEB428F00FF6905 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3167612BEB428F00FF6905 /* Title.swift */; };
 		CED02CC82BEEF46000F18D23 /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED02CC72BEEF46000F18D23 /* H264Encoder.swift */; };
@@ -68,6 +69,7 @@
 		A32350452BEC7B4E00402FB8 /* ListSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettings.swift; sourceTree = "<group>"; };
 		A32350482BEC7DA000402FB8 /* HistorySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySession.swift; sourceTree = "<group>"; };
 		A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingSession.swift; sourceTree = "<group>"; };
+		A323504D2BF0A50500402FB8 /* GlowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowButton.swift; sourceTree = "<group>"; };
 		A34A7CB22BE9E384005AE095 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CE3167612BEB428F00FF6905 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		CED02CC72BEEF46000F18D23 /* H264Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H264Encoder.swift; sourceTree = "<group>"; };
@@ -210,9 +212,18 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		A323504C2BF0A4F700402FB8 /* GlowButton */ = {
+			isa = PBXGroup;
+			children = (
+				A323504D2BF0A50500402FB8 /* GlowButton.swift */,
+			);
+			path = GlowButton;
+			sourceTree = "<group>";
+		};
 		A34A7CAB2BE9E2F1005AE095 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A323504C2BF0A4F700402FB8 /* GlowButton */,
 				A34A7CAC2BE9E311005AE095 /* Settings */,
 				A32350472BEC7CF500402FB8 /* History */,
 				A32350212BEBAF1800402FB8 /* VideoButton */,
@@ -394,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A323504E2BF0A50500402FB8 /* GlowButton.swift in Sources */,
 				A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */,
 				16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */,
 				CE3167622BEB428F00FF6905 /* Title.swift in Sources */,
