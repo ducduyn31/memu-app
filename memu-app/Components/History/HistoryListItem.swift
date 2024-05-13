@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HistoryListItem: View {
     @State var isSelected = false
-    var session: HistorySession? = nil
+    var session: HistorySession?
     let itemHeight = 100.0
     
     var body: some View {
