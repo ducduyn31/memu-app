@@ -269,7 +269,6 @@
 		A323503E2BEC79E900402FB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A32350532BF1C0C000402FB8 /* New Group */,
 				949DA73C2BEF4E14008F12B5 /* TranslatorView */,
 				A323503B2BEC79E900402FB8 /* HistoryView */,
 				A323503D2BEC79E900402FB8 /* SettingsView */,
@@ -293,13 +292,6 @@
 				A323504D2BF0A50500402FB8 /* GlowButton.swift */,
 			);
 			path = GlowButton;
-			sourceTree = "<group>";
-		};
-		A32350532BF1C0C000402FB8 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		A32350542BF1C0FA00402FB8 /* HistorySessionView */ = {
