@@ -22,6 +22,7 @@ struct TranslatorView: View {
     """.components(separatedBy: " ")
     @State private var currentIndex = 0
     @State private var timer: Timer? = nil
+    @ObservedObject var viewModel = CameraViewModel()
     
     var body: some View {
         ZStack {
@@ -34,9 +35,8 @@ struct TranslatorView: View {
                     Spacer()
                 }
                 .padding()
-                Rectangle()
-                    .frame(height: 400)
-                    .foregroundColor(.gray)
+                CameraPreview(session: viewModel.session)
+                    .frame(height: max( UIScreen.main.bounds.height / 2, 400))
                 HStack {
                     Button(action: {}) {
                         Color.gray
@@ -73,9 +73,7 @@ struct TranslatorView: View {
                 .padding()
                 .padding(.trailing, 20)
             }
-            Title(label: "Hi, \(name)!")
-                .ignoresSafeArea()
-                .position(x: 214.9, y: 50)
+            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false)
         }
     }
     
