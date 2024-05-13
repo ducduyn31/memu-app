@@ -27,7 +27,13 @@
 		A323504E2BF0A50500402FB8 /* GlowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323504D2BF0A50500402FB8 /* GlowButton.swift */; };
 		A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A7CB22BE9E384005AE095 /* UserProfile.swift */; };
 		CE3167622BEB428F00FF6905 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3167612BEB428F00FF6905 /* Title.swift */; };
-		CED02CC82BEEF46000F18D23 /* H264Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED02CC72BEEF46000F18D23 /* H264Encoder.swift */; };
+		CE40DD2E2BF1A54700F98289 /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD2B2BF1A54700F98289 /* CustomNavLink.swift */; };
+		CE40DD2F2BF1A54700F98289 /* CustomNavBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD2C2BF1A54700F98289 /* CustomNavBarContainerView.swift */; };
+		CE40DD302BF1A54700F98289 /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD2D2BF1A54700F98289 /* CustomNavBarView.swift */; };
+		CE40DD332BF1A62700F98289 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD322BF1A62700F98289 /* AppTextField.swift */; };
+		CE40DD362BF1A69200F98289 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD352BF1A69200F98289 /* SimpleButton.swift */; };
+		CE40DD3A2BF1A74600F98289 /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD392BF1A74600F98289 /* EditAccountView.swift */; };
+		CE40DD3C2BF1A75100F98289 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD3B2BF1A75100F98289 /* SubscriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +78,13 @@
 		A323504D2BF0A50500402FB8 /* GlowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowButton.swift; sourceTree = "<group>"; };
 		A34A7CB22BE9E384005AE095 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CE3167612BEB428F00FF6905 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
-		CED02CC72BEEF46000F18D23 /* H264Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H264Encoder.swift; sourceTree = "<group>"; };
+		CE40DD2B2BF1A54700F98289 /* CustomNavLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
+		CE40DD2C2BF1A54700F98289 /* CustomNavBarContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBarContainerView.swift; sourceTree = "<group>"; };
+		CE40DD2D2BF1A54700F98289 /* CustomNavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
+		CE40DD322BF1A62700F98289 /* AppTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		CE40DD352BF1A69200F98289 /* SimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
+		CE40DD392BF1A74600F98289 /* EditAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
+		CE40DD3B2BF1A75100F98289 /* SubscriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +135,6 @@
 		16A2B07E2BE9E077007ED34E /* memu-app */ = {
 			isa = PBXGroup;
 			children = (
-				CED02CC52BEEF43D00F18D23 /* Helpers */,
 				A323503E2BEC79E900402FB8 /* Views */,
 				A34A7CAB2BE9E2F1005AE095 /* Components */,
 				16A2B07F2BE9E077007ED34E /* memu_appApp.swift */,
@@ -187,6 +198,8 @@
 		A323503D2BEC79E900402FB8 /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
+				CE40DD3B2BF1A75100F98289 /* SubscriptionView.swift */,
+				CE40DD392BF1A74600F98289 /* EditAccountView.swift */,
 				A323503C2BEC79E900402FB8 /* SettingsView.swift */,
 			);
 			path = SettingsView;
@@ -223,6 +236,9 @@
 		A34A7CAB2BE9E2F1005AE095 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CE40DD342BF1A67C00F98289 /* SImpleButton */,
+				CE40DD312BF1A60E00F98289 /* AppTextfield */,
+				CE40DD2A2BF1A53100F98289 /* NavBar */,
 				A323504C2BF0A4F700402FB8 /* GlowButton */,
 				A34A7CAC2BE9E311005AE095 /* Settings */,
 				A32350472BEC7CF500402FB8 /* History */,
@@ -259,20 +275,30 @@
 			path = Title;
 			sourceTree = "<group>";
 		};
-		CED02CC52BEEF43D00F18D23 /* Helpers */ = {
+		CE40DD2A2BF1A53100F98289 /* NavBar */ = {
 			isa = PBXGroup;
 			children = (
-				CED02CC62BEEF44B00F18D23 /* H264Encoder */,
+				CE40DD2C2BF1A54700F98289 /* CustomNavBarContainerView.swift */,
+				CE40DD2D2BF1A54700F98289 /* CustomNavBarView.swift */,
+				CE40DD2B2BF1A54700F98289 /* CustomNavLink.swift */,
 			);
-			path = Helpers;
+			path = NavBar;
 			sourceTree = "<group>";
 		};
-		CED02CC62BEEF44B00F18D23 /* H264Encoder */ = {
+		CE40DD312BF1A60E00F98289 /* AppTextfield */ = {
 			isa = PBXGroup;
 			children = (
-				CED02CC72BEEF46000F18D23 /* H264Encoder.swift */,
+				CE40DD322BF1A62700F98289 /* AppTextField.swift */,
 			);
-			path = H264Encoder;
+			path = AppTextfield;
+			sourceTree = "<group>";
+		};
+		CE40DD342BF1A67C00F98289 /* SImpleButton */ = {
+			isa = PBXGroup;
+			children = (
+				CE40DD352BF1A69200F98289 /* SimpleButton.swift */,
+			);
+			path = SImpleButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,17 +436,23 @@
 				16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */,
 				CE3167622BEB428F00FF6905 /* Title.swift in Sources */,
 				A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */,
+				CE40DD2F2BF1A54700F98289 /* CustomNavBarContainerView.swift in Sources */,
+				CE40DD302BF1A54700F98289 /* CustomNavBarView.swift in Sources */,
 				949DA73E2BEF4E1F008F12B5 /* TranslatorView.swift in Sources */,
 				16A2B0802BE9E077007ED34E /* memu_appApp.swift in Sources */,
 				A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */,
+				CE40DD332BF1A62700F98289 /* AppTextField.swift in Sources */,
 				A32350462BEC7B4E00402FB8 /* ListSettings.swift in Sources */,
+				CE40DD3A2BF1A74600F98289 /* EditAccountView.swift in Sources */,
 				A32350442BEC7B1300402FB8 /* ListSettingItem.swift in Sources */,
 				A32350402BEC79E900402FB8 /* SettingsView.swift in Sources */,
 				A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */,
-				CED02CC82BEEF46000F18D23 /* H264Encoder.swift in Sources */,
 				A32350492BEC7DA000402FB8 /* HistorySession.swift in Sources */,
+				CE40DD362BF1A69200F98289 /* SimpleButton.swift in Sources */,
 				A323503F2BEC79E900402FB8 /* HistoryView.swift in Sources */,
 				A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */,
+				CE40DD3C2BF1A75100F98289 /* SubscriptionView.swift in Sources */,
+				CE40DD2E2BF1A54700F98289 /* CustomNavLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

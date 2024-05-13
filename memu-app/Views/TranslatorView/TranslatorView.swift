@@ -1,6 +1,6 @@
 //
 //  TranslatorView.swift
-//  MemuAI
+//  memu-app
 //
 //  Created by Kane Thuong on 11/5/2024.
 //
@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TranslatorView: View {
+    @AppStorage("name") var name: String = ""
+    
     @State private var displayText = "Waiting for input..."
     let fullText = """
     What I gotta do to get it through to you? I'm superhuman
@@ -71,7 +73,7 @@ struct TranslatorView: View {
                 .padding()
                 .padding(.trailing, 20)
             }
-            Title(label: "Translator")
+            Title(label: "Hi, \(name)!")
                 .ignoresSafeArea()
                 .position(x: 214.9, y: 50)
         }
@@ -89,7 +91,7 @@ struct TranslatorView: View {
                 updateText()
             }
         }
-        }
+    }
     
     func updateText() {
         let numberOfWords = Int.random(in: 2...4)

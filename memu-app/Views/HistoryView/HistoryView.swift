@@ -1,6 +1,6 @@
 //
 //  HistoryView.swift
-//  MemuAI
+//  memu-app
 //
 //  Created by Kane Thuong on 8/5/2024.
 //
