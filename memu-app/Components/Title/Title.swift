@@ -35,7 +35,9 @@ struct Title: View {
                 .padding()
             }
         }
-        .frame(height: 170)
+        .frame(width: UIScreen.main.bounds.width, height: 170)
+        .ignoresSafeArea()
+        .position(x: UIScreen.main.bounds.width / 2, y: 85)
     }
 }
 

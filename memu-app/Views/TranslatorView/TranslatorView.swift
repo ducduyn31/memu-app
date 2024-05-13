@@ -74,8 +74,6 @@ struct TranslatorView: View {
                 .padding(.trailing, 20)
             }
             Title(label: "Hi, \(name)!")
-                .ignoresSafeArea()
-                .position(x: 214.9, y: 50)
         }
     }
     
