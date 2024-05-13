@@ -23,11 +23,10 @@ struct HistoryView: View {
                 VStack {
                     HistoryList(history: $mockHistory)
                 }
-                .padding(.top, 150)
+                .padding(.top, 110)
+                CustomNavBarView(title: "Translation History", hasBackButton: false, offsetY: 50)
             }
             .ignoresSafeArea()
-            .padding(.top, 150)
-            CustomNavBarView(title: "Translation History", hasBackButton: false, offsetY: 50)
         }
     }
 }

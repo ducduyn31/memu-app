@@ -11,7 +11,6 @@ import SwiftUI
 enum SettingScreen {
     case account
     case subscription
-    case privacy
     case about
 }
 
@@ -28,8 +27,6 @@ struct ListSettingSession: Identifiable {
             EditAccountView()
         case .subscription:
             SubscriptionView()
-        case .privacy:
-            EditAccountView()
         case .about:
             AboutView()
         }
