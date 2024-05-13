@@ -22,6 +22,7 @@ struct TranslatorView: View {
     """.components(separatedBy: " ")
     @State private var currentIndex = 0
     @State private var timer: Timer? = nil
+    @State private var isCapturing = false
     @ObservedObject var viewModel = CameraViewModel()
     
     var body: some View {
@@ -50,15 +51,23 @@ struct TranslatorView: View {
                     .cornerRadius(24)
                     Spacer()
                     GlowButton(action: {
-                        startTextUpdateProcess()
+                        if isCapturing {
+                            stopTextUpdateProcess()
+                            isCapturing = false
+                        } else {
+                            startTextUpdateProcess()
+                            isCapturing = true
+                        }
+                        
                     }, size: 60)
                     Spacer()
                     Button(action: {
+                        viewModel.switchCamera()
                     }) {
                         ZStack {
                             Circle()
                                 .frame(width: 50, height: 50)
-                                .foregroundColor(.blue)
+                                .foregroundColor(isCapturing ? .gray : .blue)
                                 .overlay(
                                     Circle()
                                         .stroke(.blue, lineWidth: 4)
@@ -68,12 +77,14 @@ struct TranslatorView: View {
                             Image(systemName: "arrow.triangle.2.circlepath")
                                 .foregroundColor(.white)
                         }
-                    }.contentShape(.circle)
+                    }
+                    .contentShape(.circle)
+                    .disabled(isCapturing)
                 }
                 .padding()
                 .padding(.trailing, 20)
             }
-            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false)
+            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false, offsetY: 0)
         }
     }
     
@@ -89,6 +100,13 @@ struct TranslatorView: View {
                 updateText()
             }
         }
+    }
+    
+    func stopTextUpdateProcess() {
+        // Reset state for restart
+        displayText = "Waiting for input..."
+        currentIndex = 0
+        timer?.invalidate() // Invalidate any existing timer
     }
     
     func updateText() {
