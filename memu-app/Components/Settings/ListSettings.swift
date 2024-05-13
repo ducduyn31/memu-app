@@ -21,7 +21,6 @@ struct ListSettings: View {
     ListSettings(setting: [
         ListSettingSession(imageName: "person.crop.circle", titleMessage: "Account", screen: .account),
         ListSettingSession(imageName: "hand.thumbsup.circle", titleMessage: "Subscriptions", screen: .subscription),
-        ListSettingSession(imageName: "note.text", titleMessage: "Privacy & Policies", screen: .privacy),
-        ListSettingSession(imageName: "exclamationmark.circle.fill", titleMessage: "About Memu", screen: .about),
+        ListSettingSession(imageName: "exclamationmark.circle.fill", titleMessage: "About Memu", screen: .about)
     ])
 }
