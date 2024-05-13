@@ -14,7 +14,7 @@ struct ListSettingItem: View {
     var body: some View {
         CustomNavLink (
             title: session?.titleMessage ?? "title",
-            destination: session?.getScreen    ()
+            destination: session?.getScreen()
         ){
             
             ZStack {
