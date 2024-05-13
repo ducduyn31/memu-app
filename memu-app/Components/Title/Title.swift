@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Title: View {
     var label: String = ""
+    var offsetY: Double = 85
     
     var body: some View {
         ZStack {
@@ -37,7 +38,7 @@ struct Title: View {
         }
         .frame(width: UIScreen.main.bounds.width, height: 170)
         .ignoresSafeArea()
-        .position(x: UIScreen.main.bounds.width / 2, y: 85)
+        .position(x: UIScreen.main.bounds.width / 2, y: offsetY)
     }
 }
 

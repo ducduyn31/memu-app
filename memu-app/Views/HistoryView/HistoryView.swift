@@ -23,9 +23,7 @@ struct HistoryView: View {
                 HistoryList(history: mockHistory)
             }
             .padding(.top, 150)
-            Title(label: "Translation History")
-                .ignoresSafeArea()
-                .position(x: 214.9, y: 50)
+            Title(label: "Translation History", offsetY: 50)
         }
         .ignoresSafeArea()
         

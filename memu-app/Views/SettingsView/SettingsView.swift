@@ -40,9 +40,7 @@ struct SettingsView: View {
                     Spacer()
                 }
                 .padding(.top, 150)
-                Title(label: "Settings")
-                    .ignoresSafeArea()
-                    .position(x: 214.9, y: 50)
+                Title(label: "Settings", offsetY: 50)
             }
             .ignoresSafeArea()
         }
