@@ -13,48 +13,43 @@ struct HistoryListItem: View {
     let itemHeight = 100.0
     
     var body: some View {
-        ZStack {
-            Rectangle()
-                .fill(isSelected ? .blue.opacity(0.2) : .blue.opacity(0))
-                .frame(height: itemHeight)
-                .cornerRadius(24)
-                .padding()
-            
-            HStack {
-                Image(session?.imagePath ?? "Avatar1")
-                    .resizable()
-                    .frame(width:64,height:64)
-                    .clipShape(.circle)
-                    .padding()
-                VStack {
-                    HStack {
-                        Spacer()
-                        Text(session?.lastTime ?? "")
-                            .font(.subheadline)
-                    }
-                    .padding([.top, .trailing], 20)
-                    HStack {
-                        Image (systemName: isSelected ? "speaker.wave.2.fill" : "speaker.wave.2")
-                            .foregroundColor(.blue)
-                        Text(session?.lastMessage ?? "")
-                            .font(.body)
-                            .foregroundColor(.black)
-                            .fontWeight(.regular)
-                            .lineLimit(1)
-                            .frame(width: 200, alignment: .leading)
+        CustomNavLink (
+            title: "Conversation",
+            destination: HistorySessionView(historySession: session!)
+        ) {
+            ZStack {
+                HStack {
+                    Image(session?.imagePath ?? "Avatar1")
+                        .resizable()
+                        .frame(width:64,height:64)
+                        .clipShape(.circle)
+                        .padding()
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Text(session?.lastTime ?? "")
+                                .font(.subheadline)
+                        }
+                        .padding([.top, .trailing], 20)
+                        HStack {
+                            Text(session?.lastMessage ?? "")
+                                .font(.body)
+                                .foregroundColor(.black)
+                                .fontWeight(.regular)
+                                .lineLimit(1)
+                                .frame(width: 200, alignment: .leading)
+                            Spacer()
+                        }
                         Spacer()
                     }
+                    .frame(height: itemHeight)
                     Spacer()
                 }
-                .frame(height: itemHeight)
-                Spacer()
+                .padding([.leading, .trailing], 20)
             }
-            .onTapGesture {
-                isSelected.toggle()
-            }
-            .padding([.leading, .trailing], 20)
+            .frame(height: itemHeight)
         }
-        .frame(height: itemHeight)
+        
     }
 }
 
