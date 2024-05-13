@@ -14,6 +14,11 @@
 		16A2B0922BE9E079007ED34E /* memu_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B0912BE9E079007ED34E /* memu_appTests.swift */; };
 		16A2B09C2BE9E079007ED34E /* memu_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */; };
 		16A2B09E2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */; };
+		16D7B3302BF1E998006B72D8 /* CameraPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7B32F2BF1E998006B72D8 /* CameraPreviewController.swift */; };
+		16D7B3332BF1E9EE006B72D8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7B3322BF1E9EE006B72D8 /* CameraViewModel.swift */; };
+		16D7B3372BF1EA30006B72D8 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7B3362BF1EA30006B72D8 /* CameraService.swift */; };
+		16D7B3392BF1EA62006B72D8 /* CameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7B3382BF1EA62006B72D8 /* CameraDelegate.swift */; };
+		16D7B33B2BF1EAB3006B72D8 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D7B33A2BF1EAB3006B72D8 /* Types.swift */; };
 		949DA73E2BEF4E1F008F12B5 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DA73D2BEF4E1F008F12B5 /* TranslatorView.swift */; };
 		94E9626D2BF1B96700CD7DDA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9626C2BF1B96700CD7DDA /* AboutView.swift */; };
 		A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350232BEBAF9C00402FB8 /* HistoryList.swift */; };
@@ -66,6 +71,11 @@
 		16A2B0972BE9E079007ED34E /* memu-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "memu-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITests.swift; sourceTree = "<group>"; };
 		16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		16D7B32F2BF1E998006B72D8 /* CameraPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewController.swift; sourceTree = "<group>"; };
+		16D7B3322BF1E9EE006B72D8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		16D7B3362BF1EA30006B72D8 /* CameraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		16D7B3382BF1EA62006B72D8 /* CameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDelegate.swift; sourceTree = "<group>"; };
+		16D7B33A2BF1EAB3006B72D8 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		949DA73D2BEF4E1F008F12B5 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
 		94E9626C2BF1B96700CD7DDA /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		A32350232BEBAF9C00402FB8 /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
@@ -137,6 +147,8 @@
 		16A2B07E2BE9E077007ED34E /* memu-app */ = {
 			isa = PBXGroup;
 			children = (
+				16D7B3342BF1EA0D006B72D8 /* Services */,
+				16D7B3312BF1E9D1006B72D8 /* ViewModels */,
 				A323503E2BEC79E900402FB8 /* Views */,
 				A34A7CAB2BE9E2F1005AE095 /* Components */,
 				16A2B07F2BE9E077007ED34E /* memu_appApp.swift */,
@@ -171,6 +183,40 @@
 				16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */,
 			);
 			path = "memu-appUITests";
+			sourceTree = "<group>";
+		};
+		16D7B32E2BF1E981006B72D8 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				16D7B32F2BF1E998006B72D8 /* CameraPreviewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		16D7B3312BF1E9D1006B72D8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				16D7B3322BF1E9EE006B72D8 /* CameraViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		16D7B3342BF1EA0D006B72D8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				16D7B3352BF1EA1F006B72D8 /* VideoCapture */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		16D7B3352BF1EA1F006B72D8 /* VideoCapture */ = {
+			isa = PBXGroup;
+			children = (
+				16D7B3362BF1EA30006B72D8 /* CameraService.swift */,
+				16D7B3382BF1EA62006B72D8 /* CameraDelegate.swift */,
+				16D7B33A2BF1EAB3006B72D8 /* Types.swift */,
+			);
+			path = VideoCapture;
 			sourceTree = "<group>";
 		};
 		949DA73C2BEF4E14008F12B5 /* TranslatorView */ = {
@@ -239,6 +285,7 @@
 		A34A7CAB2BE9E2F1005AE095 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				16D7B32E2BF1E981006B72D8 /* Camera */,
 				CE40DD342BF1A67C00F98289 /* SImpleButton */,
 				CE40DD312BF1A60E00F98289 /* AppTextfield */,
 				CE40DD2A2BF1A53100F98289 /* NavBar */,
@@ -437,9 +484,11 @@
 				A323504E2BF0A50500402FB8 /* GlowButton.swift in Sources */,
 				A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */,
 				16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */,
+				16D7B33B2BF1EAB3006B72D8 /* Types.swift in Sources */,
 				CE3167622BEB428F00FF6905 /* Title.swift in Sources */,
 				A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */,
 				CE40DD2F2BF1A54700F98289 /* CustomNavBarContainerView.swift in Sources */,
+				16D7B3372BF1EA30006B72D8 /* CameraService.swift in Sources */,
 				CE40DD302BF1A54700F98289 /* CustomNavBarView.swift in Sources */,
 				949DA73E2BEF4E1F008F12B5 /* TranslatorView.swift in Sources */,
 				16A2B0802BE9E077007ED34E /* memu_appApp.swift in Sources */,
@@ -449,13 +498,16 @@
 				CE40DD3A2BF1A74600F98289 /* EditAccountView.swift in Sources */,
 				94E9626D2BF1B96700CD7DDA /* AboutView.swift in Sources */,
 				A32350442BEC7B1300402FB8 /* ListSettingItem.swift in Sources */,
+				16D7B3302BF1E998006B72D8 /* CameraPreviewController.swift in Sources */,
 				A32350402BEC79E900402FB8 /* SettingsView.swift in Sources */,
 				A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */,
+				16D7B3392BF1EA62006B72D8 /* CameraDelegate.swift in Sources */,
 				A32350492BEC7DA000402FB8 /* HistorySession.swift in Sources */,
 				CE40DD362BF1A69200F98289 /* SimpleButton.swift in Sources */,
 				A323503F2BEC79E900402FB8 /* HistoryView.swift in Sources */,
 				A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */,
 				CE40DD3C2BF1A75100F98289 /* SubscriptionView.swift in Sources */,
+				16D7B3332BF1E9EE006B72D8 /* CameraViewModel.swift in Sources */,
 				CE40DD2E2BF1A54700F98289 /* CustomNavLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,6 +22,7 @@ struct TranslatorView: View {
     """.components(separatedBy: " ")
     @State private var currentIndex = 0
     @State private var timer: Timer? = nil
+    @ObservedObject var viewModel = CameraViewModel()
     
     var body: some View {
         ZStack {
@@ -34,9 +35,8 @@ struct TranslatorView: View {
                     Spacer()
                 }
                 .padding()
-                Rectangle()
-                    .frame(height: 400)
-                    .foregroundColor(.gray)
+                CameraPreview(session: viewModel.session)
+                    .frame(height: max( UIScreen.main.bounds.height / 2, 400))
                 HStack {
                     Button(action: {}) {
                         Color.gray
