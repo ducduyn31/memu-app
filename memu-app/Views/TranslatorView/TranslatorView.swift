@@ -75,6 +75,9 @@ struct TranslatorView: View {
             }
             CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false)
         }
+        .onAppear {
+            viewModel.checkForPermissions()
+        }
     }
     
     func startTextUpdateProcess() {
