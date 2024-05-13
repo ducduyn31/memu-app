@@ -31,6 +31,11 @@
 		A32350492BEC7DA000402FB8 /* HistorySession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350482BEC7DA000402FB8 /* HistorySession.swift */; };
 		A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */; };
 		A323504E2BF0A50500402FB8 /* GlowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A323504D2BF0A50500402FB8 /* GlowButton.swift */; };
+		A32350592BF1C4AE00402FB8 /* HistorySessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350582BF1C4AE00402FB8 /* HistorySessionView.swift */; };
+		A32350622BF1D64E00402FB8 /* grocerySentences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350612BF1D64E00402FB8 /* grocerySentences.swift */; };
+		A32350642BF1D69E00402FB8 /* SentenceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350632BF1D69E00402FB8 /* SentenceItem.swift */; };
+		A32350662BF1E4B300402FB8 /* selectRandomItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350652BF1E4B300402FB8 /* selectRandomItems.swift */; };
+		A32350682BF1F2A500402FB8 /* SentenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350672BF1F2A500402FB8 /* SentenceList.swift */; };
 		A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A34A7CB22BE9E384005AE095 /* UserProfile.swift */; };
 		CE3167622BEB428F00FF6905 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3167612BEB428F00FF6905 /* Title.swift */; };
 		CE40DD2E2BF1A54700F98289 /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD2B2BF1A54700F98289 /* CustomNavLink.swift */; };
@@ -88,6 +93,11 @@
 		A32350482BEC7DA000402FB8 /* HistorySession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySession.swift; sourceTree = "<group>"; };
 		A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingSession.swift; sourceTree = "<group>"; };
 		A323504D2BF0A50500402FB8 /* GlowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowButton.swift; sourceTree = "<group>"; };
+		A32350582BF1C4AE00402FB8 /* HistorySessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySessionView.swift; sourceTree = "<group>"; };
+		A32350612BF1D64E00402FB8 /* grocerySentences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grocerySentences.swift; sourceTree = "<group>"; };
+		A32350632BF1D69E00402FB8 /* SentenceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceItem.swift; sourceTree = "<group>"; };
+		A32350652BF1E4B300402FB8 /* selectRandomItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectRandomItems.swift; sourceTree = "<group>"; };
+		A32350672BF1F2A500402FB8 /* SentenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentenceList.swift; sourceTree = "<group>"; };
 		A34A7CB22BE9E384005AE095 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		CE3167612BEB428F00FF6905 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		CE40DD2B2BF1A54700F98289 /* CustomNavLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
@@ -147,6 +157,7 @@
 		16A2B07E2BE9E077007ED34E /* memu-app */ = {
 			isa = PBXGroup;
 			children = (
+				A32350602BF1D63D00402FB8 /* Tools */,
 				16D7B3342BF1EA0D006B72D8 /* Services */,
 				16D7B3312BF1E9D1006B72D8 /* ViewModels */,
 				A323503E2BEC79E900402FB8 /* Views */,
@@ -238,6 +249,7 @@
 		A323503B2BEC79E900402FB8 /* HistoryView */ = {
 			isa = PBXGroup;
 			children = (
+				A32350542BF1C0FA00402FB8 /* HistorySessionView */,
 				A323503A2BEC79E900402FB8 /* HistoryView.swift */,
 			);
 			path = HistoryView;
@@ -257,6 +269,7 @@
 		A323503E2BEC79E900402FB8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A32350532BF1C0C000402FB8 /* New Group */,
 				949DA73C2BEF4E14008F12B5 /* TranslatorView */,
 				A323503B2BEC79E900402FB8 /* HistoryView */,
 				A323503D2BEC79E900402FB8 /* SettingsView */,
@@ -282,9 +295,43 @@
 			path = GlowButton;
 			sourceTree = "<group>";
 		};
+		A32350532BF1C0C000402FB8 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A32350542BF1C0FA00402FB8 /* HistorySessionView */ = {
+			isa = PBXGroup;
+			children = (
+				A32350582BF1C4AE00402FB8 /* HistorySessionView.swift */,
+			);
+			path = HistorySessionView;
+			sourceTree = "<group>";
+		};
+		A323505A2BF1CAB800402FB8 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				A32350632BF1D69E00402FB8 /* SentenceItem.swift */,
+				A32350672BF1F2A500402FB8 /* SentenceList.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		A32350602BF1D63D00402FB8 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A32350612BF1D64E00402FB8 /* grocerySentences.swift */,
+				A32350652BF1E4B300402FB8 /* selectRandomItems.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		A34A7CAB2BE9E2F1005AE095 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A323505A2BF1CAB800402FB8 /* Conversation */,
 				16D7B32E2BF1E981006B72D8 /* Camera */,
 				CE40DD342BF1A67C00F98289 /* SImpleButton */,
 				CE40DD312BF1A60E00F98289 /* AppTextfield */,
@@ -302,9 +349,9 @@
 		A34A7CAC2BE9E311005AE095 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */,
 				A32350452BEC7B4E00402FB8 /* ListSettings.swift */,
 				A32350432BEC7B1300402FB8 /* ListSettingItem.swift */,
-				A323504A2BEC7E4D00402FB8 /* ListSettingSession.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -367,6 +414,8 @@
 			dependencies = (
 			);
 			name = "memu-app";
+			packageProductDependencies = (
+			);
 			productName = "memu-app";
 			productReference = 16A2B07C2BE9E077007ED34E /* memu-app.app */;
 			productType = "com.apple.product-type.application";
@@ -439,6 +488,8 @@
 				Base,
 			);
 			mainGroup = 16A2B0732BE9E077007ED34E;
+			packageReferences = (
+			);
 			productRefGroup = 16A2B07D2BE9E077007ED34E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -481,11 +532,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A32350642BF1D69E00402FB8 /* SentenceItem.swift in Sources */,
+				A32350662BF1E4B300402FB8 /* selectRandomItems.swift in Sources */,
 				A323504E2BF0A50500402FB8 /* GlowButton.swift in Sources */,
 				A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */,
 				16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */,
 				16D7B33B2BF1EAB3006B72D8 /* Types.swift in Sources */,
 				CE3167622BEB428F00FF6905 /* Title.swift in Sources */,
+				A32350592BF1C4AE00402FB8 /* HistorySessionView.swift in Sources */,
 				A323504B2BEC7E4D00402FB8 /* ListSettingSession.swift in Sources */,
 				CE40DD2F2BF1A54700F98289 /* CustomNavBarContainerView.swift in Sources */,
 				16D7B3372BF1EA30006B72D8 /* CameraService.swift in Sources */,
@@ -497,6 +551,8 @@
 				A32350462BEC7B4E00402FB8 /* ListSettings.swift in Sources */,
 				CE40DD3A2BF1A74600F98289 /* EditAccountView.swift in Sources */,
 				94E9626D2BF1B96700CD7DDA /* AboutView.swift in Sources */,
+				A32350622BF1D64E00402FB8 /* grocerySentences.swift in Sources */,
+				A32350682BF1F2A500402FB8 /* SentenceList.swift in Sources */,
 				A32350442BEC7B1300402FB8 /* ListSettingItem.swift in Sources */,
 				16D7B3302BF1E998006B72D8 /* CameraPreviewController.swift in Sources */,
 				A32350402BEC79E900402FB8 /* SettingsView.swift in Sources */,
@@ -665,7 +721,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "memu-app/memu_app.entitlements";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"memu-app/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
@@ -687,7 +744,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.coffeewithegg.memu-app";
+				PRODUCT_BUNDLE_IDENTIFIER = thisisauniq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
@@ -704,7 +761,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "memu-app/memu_app.entitlements";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"memu-app/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
@@ -726,7 +784,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.coffeewithegg.memu-app";
+				PRODUCT_BUNDLE_IDENTIFIER = thisisauniq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
