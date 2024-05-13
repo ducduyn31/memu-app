@@ -23,7 +23,7 @@ struct HistoryView: View {
                 HistoryList(history: mockHistory)
             }
             .padding(.top, 150)
-            Title(label: "Translation History", offsetY: 50)
+            CustomNavBarView(title: "Translation History", hasBackButton: false, offsetY: 50)
         }
         .ignoresSafeArea()
         

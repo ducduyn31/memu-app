@@ -40,7 +40,7 @@ struct SettingsView: View {
                     Spacer()
                 }
                 .padding(.top, 150)
-                Title(label: "Settings", offsetY: 50)
+                CustomNavBarView(title: "Settings", hasBackButton: false, offsetY: 50)
             }
             .ignoresSafeArea()
         }

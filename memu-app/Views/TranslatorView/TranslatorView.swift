@@ -73,7 +73,7 @@ struct TranslatorView: View {
                 .padding()
                 .padding(.trailing, 20)
             }
-            Title(label: "Hi, \(name)!")
+            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false)
         }
     }
     
