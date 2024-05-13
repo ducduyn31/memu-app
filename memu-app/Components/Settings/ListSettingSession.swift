@@ -31,7 +31,7 @@ struct ListSettingSession: Identifiable {
         case .privacy:
             EditAccountView()
         case .about:
-            EditAccountView()
+            AboutView()
         }
     }
     

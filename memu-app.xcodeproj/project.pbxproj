@@ -15,6 +15,7 @@
 		16A2B09C2BE9E079007ED34E /* memu_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */; };
 		16A2B09E2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */; };
 		949DA73E2BEF4E1F008F12B5 /* TranslatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949DA73D2BEF4E1F008F12B5 /* TranslatorView.swift */; };
+		94E962692BF1B6BA00CD7DDA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E962682BF1B6BA00CD7DDA /* AboutView.swift */; };
 		A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350232BEBAF9C00402FB8 /* HistoryList.swift */; };
 		A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350252BEBAFD400402FB8 /* HistoryListItem.swift */; };
 		A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32350272BEBB01100402FB8 /* VideoButton.swift */; };
@@ -66,6 +67,7 @@
 		16A2B09B2BE9E079007ED34E /* memu_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITests.swift; sourceTree = "<group>"; };
 		16A2B09D2BE9E079007ED34E /* memu_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		949DA73D2BEF4E1F008F12B5 /* TranslatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorView.swift; sourceTree = "<group>"; };
+		94E962682BF1B6BA00CD7DDA /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AboutView.swift; path = "../../../../MemiAI-APP/MimuAI/Views/SettingsView/AboutView.swift"; sourceTree = "<group>"; };
 		A32350232BEBAF9C00402FB8 /* HistoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryList.swift; sourceTree = "<group>"; };
 		A32350252BEBAFD400402FB8 /* HistoryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListItem.swift; sourceTree = "<group>"; };
 		A32350272BEBB01100402FB8 /* VideoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoButton.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				CE40DD3B2BF1A75100F98289 /* SubscriptionView.swift */,
 				CE40DD392BF1A74600F98289 /* EditAccountView.swift */,
 				A323503C2BEC79E900402FB8 /* SettingsView.swift */,
+				94E962682BF1B6BA00CD7DDA /* AboutView.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				CE40DD332BF1A62700F98289 /* AppTextField.swift in Sources */,
 				A32350462BEC7B4E00402FB8 /* ListSettings.swift in Sources */,
 				CE40DD3A2BF1A74600F98289 /* EditAccountView.swift in Sources */,
+				94E962692BF1B6BA00CD7DDA /* AboutView.swift in Sources */,
 				A32350442BEC7B1300402FB8 /* ListSettingItem.swift in Sources */,
 				A32350402BEC79E900402FB8 /* SettingsView.swift in Sources */,
 				A34A7CB32BE9E384005AE095 /* UserProfile.swift in Sources */,
