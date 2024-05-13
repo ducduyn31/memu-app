@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ListSettings: View {
-    var settings: [ListSettingSession] = []
+    var setting: [ListSettingSession] = []
     
     var body: some View {
-            ForEach(settings) { ListSettingSession in
-                ListSettingItem(session: ListSettingSession)
+        ForEach(setting) { ListSettingSession in
+            ListSettingItem(session: ListSettingSession)
         }
     }
 }
 
 #Preview {
-    ListSettings(settings: [
-        ListSettingSession(imageName: "person.crop.circle", titleMessage: "Account"),
-        ListSettingSession(imageName: "hand.thumbsup.circle", titleMessage: "Subscriptions"),
-        ListSettingSession(imageName: "note.text", titleMessage: "Privacy & Policies"),
-        ListSettingSession(imageName: "exclamationmark.circle.fill", titleMessage: "About Memu"),
+    ListSettings(setting: [
+        ListSettingSession(imageName: "person.crop.circle", titleMessage: "Account", screen: .account),
+        ListSettingSession(imageName: "hand.thumbsup.circle", titleMessage: "Subscriptions", screen: .subscription),
+        ListSettingSession(imageName: "note.text", titleMessage: "Privacy & Policies", screen: .privacy),
+        ListSettingSession(imageName: "exclamationmark.circle.fill", titleMessage: "About Memu", screen: .about),
     ])
 }

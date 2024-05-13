@@ -8,15 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            TranslatorView()
+                .tabItem {
+                    Label("Translator", systemImage: "waveform")
+                }
+            HistoryView()
+                .tabItem {
+                    Label("History", systemImage: "clock")
+                }
+            SettingsView()
+                .tabItem {
+                    Label("Settings",
+                          systemImage: "person")}
         }
-        .padding()
+        .onAppear{
+            initializeUserDefaults()
+        }
     }
+}
+
+func initializeUserDefaults(){
+    UserDefaults.standard.register(defaults: ["name" : "Anna Lee"])
+    UserDefaults.standard.register(defaults: ["email" : "anna_lee@gmail.com"])
+    UserDefaults.standard.register(defaults: ["phoneNum" : "0123456789"])
 }
 
 #Preview {
