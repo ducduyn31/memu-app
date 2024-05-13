@@ -18,17 +18,17 @@ struct HistoryView: View {
     ]
     
     var body: some View {
-        ZStack {
-            VStack {
-                HistoryList(history: $mockHistory)
+        NavigationStack {
+            ZStack {
+                VStack {
+                    HistoryList(history: $mockHistory)
+                }
+                .padding(.top, 150)
             }
+            .ignoresSafeArea()
             .padding(.top, 150)
-            Title(label: "Translation History")
-                .ignoresSafeArea()
-                .position(x: 214.9, y: 50)
+            CustomNavBarView(title: "Translation History", hasBackButton: false, offsetY: 50)
         }
-        .ignoresSafeArea()
-        
     }
 }
 

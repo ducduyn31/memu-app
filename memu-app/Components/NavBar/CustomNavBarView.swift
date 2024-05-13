@@ -10,6 +10,8 @@ import SwiftUI
 struct CustomNavBarView: View {
     @State var title: String
     @Environment(\.dismiss) var dismissView
+    var hasBackButton: Bool = true
+    var offsetY: Double = 85
     
     var body: some View {
         ZStack {
@@ -26,15 +28,17 @@ struct CustomNavBarView: View {
             VStack {
                 Spacer()
                 HStack {
-                    Button(action: {
-                        dismissView()
-                    }, label: {
-                        Image(systemName: "chevron.left")
-                            .resizable()
-                            .foregroundStyle(.white)
-                            .frame(width: 15, height: 20)
-                    })
-                    
+                    if hasBackButton {
+                        
+                        Button(action: {
+                            dismissView()
+                        }, label: {
+                            Image(systemName: "chevron.left")
+                                .resizable()
+                                .foregroundStyle(.white)
+                                .frame(width: 15, height: 20)
+                        })
+                    }
                     Text(title)
                         .font(.title)
                         .fontWeight(.bold)
@@ -45,9 +49,9 @@ struct CustomNavBarView: View {
                 .padding()
             }
         }
-        .frame(height: 170)
+        .frame(width: UIScreen.main.bounds.width, height: 170)
         .ignoresSafeArea()
-        .position(x: 214.9, y: 0)
+        .position(x: UIScreen.main.bounds.width / 2, y: offsetY)
     }
 }
 
