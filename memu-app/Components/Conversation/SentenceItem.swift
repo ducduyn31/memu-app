@@ -7,10 +7,14 @@
 
 import SwiftUI
 import AVFoundation
+import Combine
+import SwiftTTSCombine
 
 struct SentenceItem: View {
     let itemHeight = 100.0
     let content : String
+    let engine: TTSEngine = SwiftTTSCombine.Engine()
+    @State var cancellables = Set<AnyCancellable>()
     @State var isSelected = false
     
     var body: some View {
@@ -46,11 +50,15 @@ struct SentenceItem: View {
             .onTapGesture {
                 isSelected.toggle()
                 if isSelected {
-                    let utterance = AVSpeechUtterance(string: content)
-                    let voice = AVSpeechSynthesisVoice(language: "en-GB")
-                    utterance.voice = voice
-                    let synthesizer = AVSpeechSynthesizer()
-                    synthesizer.speak(utterance)
+                    engine.speak(string: content)
+                    
+                    engine.isSpeakingPublisher
+                        .sink { isSpeaking in
+                            if !isSpeaking {
+                                isSelected.toggle()
+                            }
+                        }
+                        .store(in: &cancellables)
                 }
             }
         }
