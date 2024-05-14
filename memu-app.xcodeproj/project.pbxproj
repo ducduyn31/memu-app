@@ -45,6 +45,7 @@
 		CE40DD362BF1A69200F98289 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD352BF1A69200F98289 /* SimpleButton.swift */; };
 		CE40DD3A2BF1A74600F98289 /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD392BF1A74600F98289 /* EditAccountView.swift */; };
 		CE40DD3C2BF1A75100F98289 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD3B2BF1A75100F98289 /* SubscriptionView.swift */; };
+		CE473FCE2BF305C700BD4248 /* SwiftTTSCombine in Frameworks */ = {isa = PBXBuildFile; productRef = CE473FCD2BF305C700BD4248 /* SwiftTTSCombine */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE473FCE2BF305C700BD4248 /* SwiftTTSCombine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +409,7 @@
 			);
 			name = "memu-app";
 			packageProductDependencies = (
+				CE473FCD2BF305C700BD4248 /* SwiftTTSCombine */,
 			);
 			productName = "memu-app";
 			productReference = 16A2B07C2BE9E077007ED34E /* memu-app.app */;
@@ -481,6 +484,7 @@
 			);
 			mainGroup = 16A2B0732BE9E077007ED34E;
 			packageReferences = (
+				CE473FCC2BF305C700BD4248 /* XCRemoteSwiftPackageReference "swift-tts" */,
 			);
 			productRefGroup = 16A2B07D2BE9E077007ED34E /* Products */;
 			projectDirPath = "";
@@ -919,6 +923,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE473FCC2BF305C700BD4248 /* XCRemoteSwiftPackageReference "swift-tts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/renaudjenny/swift-tts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE473FCD2BF305C700BD4248 /* SwiftTTSCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE473FCC2BF305C700BD4248 /* XCRemoteSwiftPackageReference "swift-tts" */;
+			productName = SwiftTTSCombine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 16A2B0742BE9E077007ED34E /* Project object */;
 }
