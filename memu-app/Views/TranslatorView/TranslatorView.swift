@@ -12,13 +12,6 @@ struct TranslatorView: View {
     
     @State private var displayText = "Waiting for input..."
     let fullText = """
-    What I gotta do to get it through to you? I'm superhuman
-    I'm innovative and I'm made of rubber so that anything
-    You say is ricochetin' off of me, and it'll glue to you and
-    I'm devastating, more than ever demonstrating
-    How to give a motherfuckin' audience a feeling like it's levitating
-    Never fading, and I know the haters are forever waiting
-    For the day that they can say I fell off, they'll be celebrating
     """.components(separatedBy: " ")
     @State private var currentIndex = 0
     @State private var timer: Timer? = nil
@@ -33,6 +26,7 @@ struct TranslatorView: View {
                     Text(displayText)
                         .font(.title)
                         .foregroundColor(.gray)
+                        .lineLimit(1)
                     Spacer()
                 }
                 .padding()
@@ -84,7 +78,7 @@ struct TranslatorView: View {
                 .padding()
                 .padding(.trailing, 20)
             }
-            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false, offsetY: 0)
+            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false)
         }
         .onAppear {
             viewModel.checkForPermissions()
