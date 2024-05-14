@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Combine
+import SwiftTTSCombine
 
 struct TranslatorView: View {
     @AppStorage("name") var name: String = ""
@@ -18,6 +20,7 @@ struct TranslatorView: View {
     @State private var timer: Timer? = nil
     @State private var isCapturing = false
     @ObservedObject var viewModel = CameraViewModel()
+    let engine: TTSEngine = SwiftTTSCombine.Engine()
     
     var body: some View {
         ZStack {
@@ -34,14 +37,8 @@ struct TranslatorView: View {
                 CameraPreview(session: viewModel.session)
                     .frame(height: max( UIScreen.main.bounds.height / 2, 400))
                 HStack {
-                    Button(action: {}) {
-                        Color.gray
-                            .opacity(0.2)
-                            .overlay(content: {
-                                Image(systemName: "photo")
-                                    .foregroundColor(.white)
-                            })
-                    }
+                    Rectangle()
+                    .opacity(0)
                     .frame(width: 60, height: 60)
                     .cornerRadius(24)
                     Spacer()
@@ -114,6 +111,7 @@ struct TranslatorView: View {
         
         if currentIndex < fullText.count {
             displayText = currentIndex > 0 ? " \(selectedWords)" : selectedWords
+            engine.speak(string: displayText)
             currentIndex = endIndex
         } else {
             timer?.invalidate() // Stop the timer once we reach the end of the text
