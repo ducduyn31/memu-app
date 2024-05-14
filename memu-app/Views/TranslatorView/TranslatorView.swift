@@ -12,6 +12,7 @@ struct TranslatorView: View {
     
     @State private var displayText = "Waiting for input..."
     let fullText = """
+    Excuse me, could you help me find where the organic produce section is, and also let me know if you have any gluten-free bread and non-dairy milk options in stock, as well as whether there are any current promotions or discounts on these items?
     """.components(separatedBy: " ")
     @State private var currentIndex = 0
     @State private var timer: Timer? = nil
