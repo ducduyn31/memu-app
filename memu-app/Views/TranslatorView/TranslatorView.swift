@@ -19,8 +19,10 @@ struct TranslatorView: View {
     @State private var currentIndex = 0
     @State private var timer: Timer? = nil
     @State private var isCapturing = false
+    @State private var isSpeaking = false
     @ObservedObject var viewModel = CameraViewModel()
     let engine: TTSEngine = SwiftTTSCombine.Engine()
+    @State var cancellables = Set<AnyCancellable>()
     
     var body: some View {
         ZStack {
@@ -30,7 +32,6 @@ struct TranslatorView: View {
                     Text(displayText)
                         .font(.title)
                         .foregroundColor(.gray)
-                        .lineLimit(1)
                     Spacer()
                 }
                 .padding()
@@ -76,7 +77,7 @@ struct TranslatorView: View {
                 .padding()
                 .padding(.trailing, 20)
             }
-            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false)
+            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false, offsetY: 10)
         }
         .onAppear {
             viewModel.checkForPermissions()
@@ -92,7 +93,9 @@ struct TranslatorView: View {
         // Initial delay of 300ms before starting the timer
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
-                updateText()
+                if !isSpeaking{
+                    updateText()
+                }
             }
         }
     }
@@ -113,6 +116,13 @@ struct TranslatorView: View {
             displayText = currentIndex > 0 ? " \(selectedWords)" : selectedWords
             engine.speak(string: displayText)
             currentIndex = endIndex
+            
+            engine.isSpeakingPublisher
+                .sink { isSpeaking in
+                    self.isSpeaking = isSpeaking
+                }
+                .store(in: &cancellables)
+            
         } else {
             timer?.invalidate() // Stop the timer once we reach the end of the text
         }
