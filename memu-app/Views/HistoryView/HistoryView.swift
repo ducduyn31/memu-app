@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+// The Text displays the last message in the session.
 struct HistoryView: View {
     
+    // mockHistory is a state variable that holds an array of HistorySession objects.
+    // Each object represents a history session.
     @State var mockHistory: [HistorySession] = [
         HistorySession(imagePath: "Avatar1", lastTime: "18:31", lastMessage: "Can I have a bottle of water?"),
         HistorySession(imagePath: "Avatar2", lastTime: "16:04", lastMessage: "Can I have a bottle of water?"),

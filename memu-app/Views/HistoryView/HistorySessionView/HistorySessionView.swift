@@ -19,7 +19,7 @@ struct HistorySessionView: View {
                 .edgesIgnoringSafeArea(.all)
                 .navigationBarBackButtonHidden()
                 .onAppear {
-                    let url = URL(string: "https://videos.pexels.com/video-files/5212265/5212265-uhd_3840_2160_25fps.mp4")!
+                    let url = URL(string: historySession.videoUrl)!
                     player = AVPlayer(url: url)
                     player.play()
                     
