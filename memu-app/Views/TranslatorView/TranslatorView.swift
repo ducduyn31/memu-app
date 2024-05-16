@@ -100,7 +100,7 @@ struct TranslatorView: View {
         // Initial delay of 300ms before starting the timer
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
-                if !isSpeaking{
+                if !isSpeaking{ //check if text to speech is currently active
                     updateText()
                 }
             }
@@ -122,9 +122,11 @@ struct TranslatorView: View {
         
         if currentIndex < fullText.count {
             displayText = currentIndex > 0 ? " \(selectedWords)" : selectedWords
+            //activate text-to-speech
             engine.speak(string: displayText)
             currentIndex = endIndex
             
+            //listener for text to speech. isSpeaking will become false when the speech has finished 
             engine.isSpeakingPublisher
                 .sink { isSpeaking in
                     self.isSpeaking = isSpeaking
