@@ -10,8 +10,11 @@ import Combine
 import SwiftTTSCombine
 
 struct TranslatorView: View {
+    // Using AppStorage to store the user's name
+    // The name will be displayed on the top of the screen
     @AppStorage("name") var name: String = ""
     
+    // This text will be updated with the full text over time
     @State private var displayText = "Waiting for input..."
     let fullText = """
     Excuse me, could you help me find where the organic produce section is, and also let me know if you have any gluten-free bread and non-dairy milk options in stock, as well as whether there are any current promotions or discounts on these items?
@@ -21,6 +24,8 @@ struct TranslatorView: View {
     @State private var isCapturing = false
     @State private var isSpeaking = false
     @ObservedObject var viewModel = CameraViewModel()
+
+    // Using SwiftTTS for text-to-speech functionality
     let engine: TTSEngine = SwiftTTSCombine.Engine()
     @State var cancellables = Set<AnyCancellable>()
     
@@ -44,6 +49,7 @@ struct TranslatorView: View {
                     .cornerRadius(24)
                     Spacer()
                     GlowButton(action: {
+                        // Start or stop the text update process based on the current state
                         if isCapturing {
                             stopTextUpdateProcess()
                             isCapturing = false
@@ -54,13 +60,14 @@ struct TranslatorView: View {
                         
                     }, size: 60)
                     Spacer()
+                    // Switch camera button
                     Button(action: {
                         viewModel.switchCamera()
                     }) {
                         ZStack {
                             Circle()
                                 .frame(width: 50, height: 50)
-                                .foregroundColor(isCapturing ? .gray : .blue)
+                                .foregroundColor(isCapturing ? .gray : .blue) // Gray out the button when capturing
                                 .overlay(
                                     Circle()
                                         .stroke(.blue, lineWidth: 4)
@@ -72,7 +79,7 @@ struct TranslatorView: View {
                         }
                     }
                     .contentShape(.circle)
-                    .disabled(isCapturing)
+                    .disabled(isCapturing) // Disable switch camera button when capturing
                 }
                 .padding()
                 .padding(.trailing, 20)
@@ -107,6 +114,7 @@ struct TranslatorView: View {
         timer?.invalidate() // Invalidate any existing timer
     }
     
+    // Update the text to be displayed
     func updateText() {
         let numberOfWords = Int.random(in: 2...4)
         let endIndex = min(currentIndex + numberOfWords, fullText.count)

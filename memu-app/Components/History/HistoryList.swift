@@ -16,22 +16,13 @@ struct HistoryList: View {
                 ForEach(history) { historySession in
                     HistoryListItem(session: historySession)
                 }
-                .onDelete(perform: delete)
+                .onDelete(perform: delete) // Enable swipe to delete
             }
         }
     }
     
+    // Function to delete a conversation from the history list
     func delete(at offsets: IndexSet) {
         history.remove(atOffsets: offsets)
     }
 }
-
-//#Preview {
-//    HistoryList(history: [
-//        HistorySession(imagePath: "Avatar1", lastTime: "18:31", lastMessage: "Can I have a bottle of water"),
-//        HistorySession(imagePath: "Avatar1", lastTime: "18:31", lastMessage: "Can I have a bottle of water"),
-//        HistorySession(imagePath: "Avatar1", lastTime: "18:31", lastMessage: "Can I have a bottle of water"),
-//        HistorySession(imagePath: "Avatar1", lastTime: "18:31", lastMessage: "Can I have a bottle of water"),
-//        HistorySession(imagePath: "Avatar1", lastTime: "18:31", lastMessage: "Can I have a bottle of water"),
-//    ])
-//}
