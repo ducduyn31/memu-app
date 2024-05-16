@@ -1,12 +1,13 @@
 //
 //  EditAccountItem.swift
-//  MimuAI
+//  memu-app
 //
-//  Created by user on 8/5/2024.
+//  Created by Jonathan on 8/5/2024.
 //
 
 import SwiftUI
 
+//a component to represent a text field in the app
 struct AppTextField: View {
     var label: String? = nil
     @Binding var editedField : String

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//ZStack wrapper to place CustomNavBarView on top of the screen
 struct CustomNavBarContainerView <Content: View>: View {
     
     let content: Content

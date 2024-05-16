@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//a custom wrapper to replace the default NavigationLink with a stylized version
 struct CustomNavLink<Label:View, Destination:View>: View {
     
     let title: String

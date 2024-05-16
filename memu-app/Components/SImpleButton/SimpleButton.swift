@@ -1,12 +1,13 @@
 //
 //  SimpleButton.swift
-//  MimuAI
+//  memu-app
 //
-//  Created by user on 8/5/2024.
+//  Created by Jonathan on 8/5/2024.
 //
 
 import SwiftUI
 
+//a component to represent a button in the app
 struct SimpleButton: View {
     var label: String = ""
     var action: () -> Void = {}

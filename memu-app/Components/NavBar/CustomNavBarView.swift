@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//the custom navigation bar
 struct CustomNavBarView: View {
     @State var title: String
     @Environment(\.dismiss) var dismissView
@@ -30,6 +31,8 @@ struct CustomNavBarView: View {
                 HStack {
                     if hasBackButton {
                         
+                        //when the button is pressed, it will dismiss the current screen
+                        //hence it is equivalent to the back button in NagivationLink
                         Button(action: {
                             dismissView()
                         }, label: {
