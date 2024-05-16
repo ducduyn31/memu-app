@@ -4,12 +4,10 @@
 //
 //  Created by Kane Thuong on 8/5/2024.
 //
-
 import SwiftUI
 
 // The Text displays the last message in the session.
-struct HistoryView: View {
-    
+struct HistoryView: View { 
     // mockHistory is a state variable that holds an array of HistorySession objects.
     // Each object represents a history session.
     @State var mockHistory: [HistorySession] = [
@@ -24,12 +22,14 @@ struct HistoryView: View {
         NavigationStack {
             ZStack {
                 VStack {
+                    // Displaying the HistoryList with the mockHistory data
                     HistoryList(history: $mockHistory)
                 }
-                .padding(.top, 110)
+                .padding(.top, 110) // Adding padding to the top of the VStack
+                // Displaying a custom navigation bar with the title "Translation History"
                 CustomNavBarView(title: "Translation History", hasBackButton: false, offsetY: 50)
             }
-            .ignoresSafeArea()
+            .ignoresSafeArea() // Ignoring the safe area constraints
         }
     }
 }

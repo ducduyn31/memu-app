@@ -21,7 +21,6 @@ struct ListSettingItem: View {
             title: session?.titleMessage ?? "title",
             destination: session?.getScreen()
         ){
-            // The content of the navigation link is a ZStack with a Rectangle and an HStack.
             ZStack {
                 // The Rectangle is invisible and is used to set the height of the setting item.
                 Rectangle()
