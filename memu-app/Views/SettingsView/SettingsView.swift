@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SettingsView: View {
+    // Using AppStorage to store the user's name
+    // The name will be displayed on the top of the screen
     @AppStorage("name") var name: String = ""
     
+    // Creating a mock settings data
+    // This data will be used to display the settings list
     let mockSettings: [ListSettingSession] = [
         ListSettingSession(imageName: "person.crop.circle", titleMessage: "Account", screen: .account),
         ListSettingSession(imageName: "hand.thumbsup.circle", titleMessage: "Subscriptions", screen: .subscription),
@@ -39,6 +43,8 @@ struct SettingsView: View {
                     Spacer()
                 }
                 .padding(.top, 150)
+                // Displaying a custom navigation bar with the title "Settings"
+                // The back button is hidden in the settings view
                 CustomNavBarView(title: "Settings", hasBackButton: false, offsetY: 50)
             }
             .ignoresSafeArea()

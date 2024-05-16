@@ -16,7 +16,6 @@ struct ListSettingItem: View {
             title: session?.titleMessage ?? "title",
             destination: session?.getScreen()
         ){
-            
             ZStack {
                 Rectangle()
                     .opacity(0)
