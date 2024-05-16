@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+//a screen to represent future features and subscription opportunities for the app.
 struct SubscriptionView: View {
     var body: some View {
         ZStack {
