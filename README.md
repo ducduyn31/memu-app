@@ -2,10 +2,20 @@
 
 `Memu` is an iOS application designed to translate sign language into text and speech, facilitating communication for individuals who use sign language.
 
+[Github](https://github.com/ducduyn31/memu-app)
+
 ## Inspiration
 
 The inspiration for `Memu` came from the desire to communicate with a new friend who cannot speak and you don't know their sign language (Yes, each country have their own sign language).
 
+## Team Members
+
+| Student Name       	| Student Id 	|
+|--------------------	|------------	|
+| Duc Duy Nguyen     	| 14192633   	|
+| Duy Khang Thuong   	| 25095858   	|
+| Jonathan Sjamsudin 	| 25118098   	|
+| Le Tuan Dat Luu    	| 24904308   	|
 ## Use Cases
 Here are some other use cases for the `Memu` app:
 
@@ -44,8 +54,9 @@ Here are some key features of the `Memu` app:
 - User profiles and preferences
 
 ## Todo Milestones
+- [ ] Have authentication process
+- [ ] H264 video upstream encode using ToolboxVideoAPI
 - [ ] Support more languages
 - [ ] Tailored voice based on out look
 - [ ] Make the app more awesome
-
 
