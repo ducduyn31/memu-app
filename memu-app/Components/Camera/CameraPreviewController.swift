@@ -9,6 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct CameraPreview: UIViewRepresentable {
+    /// An intermediate view to display camera preview, brdiging between UIKit and SwiftUI
     
     let session: AVCaptureSession
     
