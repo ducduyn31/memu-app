@@ -7,6 +7,9 @@
 
 import AVFoundation
 
+/// A service to manage camera configuration and capture session
+/// It is responsible for setting up camera input and output
+/// and managing the capture session
 class CameraService : ObservableObject {
     
     enum Status {
@@ -24,7 +27,7 @@ class CameraService : ObservableObject {
     private var position = AVCaptureDevice.Position.back
     
     private let sessionQueue = DispatchQueue(label: "mimuai.session.queue")
-    private var cameraDelegate: CameraDelegate?
+    private var cameraDelegate: PhotoDelegate?
     
     func configureSession() {
         sessionQueue.async { [weak self] in
@@ -99,6 +102,7 @@ class CameraService : ObservableObject {
         }
     }
     
+    /// Switch between front and back camera
     func switchCamera() {
         sessionQueue.async { [weak self] in
             guard let self, self.videoDeviceInput != nil else { return }
@@ -114,6 +118,7 @@ class CameraService : ObservableObject {
         }
     }
     
+    /// Capture an image using the current camera configuration
     func captureImage() {
         sessionQueue.async { [weak self] in
             guard let self else { return }
@@ -127,7 +132,7 @@ class CameraService : ObservableObject {
             settings.maxPhotoDimensions = .init(width: 4032, height: 3024)
             settings.photoQualityPrioritization = .quality
             
-            cameraDelegate = CameraDelegate { result in
+            cameraDelegate = PhotoDelegate { result in
                 print("Image captured")
             }
             

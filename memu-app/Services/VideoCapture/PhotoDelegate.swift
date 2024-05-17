@@ -8,16 +8,16 @@
 import AVFoundation
 import UIKit
 
-struct CameraCaptureCallbackArguments {
+struct PhotoCaptureCallbackArguments {
     let image: UIImage?
     let data: Data?
 }
 
-class CameraDelegate: NSObject, AVCapturePhotoCaptureDelegate {
+class PhotoDelegate: NSObject, AVCapturePhotoCaptureDelegate {
     
-    private let completion: (CameraCaptureCallbackArguments?) -> Void
+    private let completion: (PhotoCaptureCallbackArguments?) -> Void
     
-    init(completion: @escaping (CameraCaptureCallbackArguments?) -> Void) {
+    init(completion: @escaping (PhotoCaptureCallbackArguments?) -> Void) {
           self.completion = completion
        }
     
@@ -40,7 +40,7 @@ class CameraDelegate: NSObject, AVCapturePhotoCaptureDelegate {
             return
         }
         
-        completion(CameraCaptureCallbackArguments(image: image, data: imageData))
+        completion(PhotoCaptureCallbackArguments(image: image, data: imageData))
     }
 }
 

@@ -34,14 +34,18 @@ class CameraViewModel: ObservableObject {
         cameraManager.configureSession()
     }
     
+    /// Check for camera permission, including photo library permission
+    /// If the permission is not granted, it will show an alert to ask for permission
     func checkForPermissions() {
         let status = AVCaptureDevice.authorizationStatus(for: .video)
         
         switch status {
             case .authorized:
+            // The user has previously granted access to the camera.
                 isPermissionGranted = true
                 configureSession()
             case .notDetermined:
+            // The user has not yet been asked for camera access.
                 AVCaptureDevice.requestAccess(for: .video) { granted in
                     DispatchQueue.main.async {
                         if granted {
@@ -65,4 +69,8 @@ class CameraViewModel: ObservableObject {
     func capturePhoto() {
         cameraManager.captureImage()
     }
+    
+    func sendUpstream() {}
+    
+    func cancelUpstream() {}
 }
