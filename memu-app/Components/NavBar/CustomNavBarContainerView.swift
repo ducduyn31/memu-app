@@ -21,7 +21,7 @@ struct CustomNavBarContainerView <Content: View>: View {
     var body: some View {
         ZStack(){
             content.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
-            CustomNavBarView(title: title, offsetY: 0)
+            CustomNavBarView(title: title, initialOffsetY: 0)
         }
     }
 }

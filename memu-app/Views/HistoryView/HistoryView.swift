@@ -27,7 +27,7 @@ struct HistoryView: View {
                 }
                 .padding(.top, 110) // Adding padding to the top of the VStack
                 // Displaying a custom navigation bar with the title "Translation History"
-                CustomNavBarView(title: "Translation History", hasBackButton: false, offsetY: 50)
+                CustomNavBarView(title: "Translation History", initialOffsetY: 85, hasBackButton: false)
             }
             .ignoresSafeArea() // Ignoring the safe area constraints
         }
