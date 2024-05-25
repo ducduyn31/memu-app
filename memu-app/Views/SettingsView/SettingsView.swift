@@ -45,7 +45,7 @@ struct SettingsView: View {
                 .padding(.top, 150)
                 // Displaying a custom navigation bar with the title "Settings"
                 // The back button is hidden in the settings view
-                CustomNavBarView(title: "Settings", hasBackButton: false, offsetY: 50)
+                CustomNavBarView(title: "Settings", initialOffsetY: 85, hasBackButton: false)
             }
             .ignoresSafeArea()
         }

@@ -76,7 +76,7 @@ struct TranslatorView: View {
                 .padding()
                 .padding(.trailing, 20)
             }
-            CustomNavBarView(title: "Hi, \(name)!", hasBackButton: false, offsetY: 10)
+            CustomNavBarView(title: "Hi, \(name)!", initialOffsetY: 85, hasBackButton: false)
         }
         .onAppear {
             // Check for camera permissions when the view appears
