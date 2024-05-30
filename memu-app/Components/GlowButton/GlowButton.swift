@@ -11,19 +11,19 @@ import SwiftUI
 struct GlowButton: View {
     // State variables to control the glowing and pressed state of the button.
     @State private var isGlowing = false
-    @Binding var isTriggered: Bool
+    @State private var isPressed = false
 
     // Properties for the button label, action when pressed, and size.
     var label: String = ""
+    var action: () -> Void = {}
     var size: CGFloat = 160
-    var action: (_ trigger: Bool?) -> Void
 
     // The body of the GlowButton view.
     var body: some View {
         // The button's action toggles the isPressed state and performs the provided action.
         Button(action: {
-            isTriggered.toggle()
-            action(isTriggered)
+            isPressed.toggle()
+            action()
         })
         {
             // The button is a ZStack with a Circle and a Text.
@@ -31,12 +31,12 @@ struct GlowButton: View {
                 // The Circle changes color when pressed and has a glowing effect.
                 Circle()
                     .frame(width: size, height: size)
-                    .foregroundColor(isTriggered ? .red : .blue)
+                    .foregroundColor(isPressed ? .red : .blue)
                     .overlay(
                         Circle()
                             .stroke(.blue, lineWidth: 4)
                             .scaleEffect(isGlowing ? 1.5 : 1)
-                            .opacity(isGlowing && isTriggered ? 0 : 1)
+                            .opacity(isGlowing && isPressed ? 0 : 1)
                             // The glowing effect is an animation that repeats forever.
                             .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: false), value: isGlowing)
                     )
@@ -56,5 +56,5 @@ struct GlowButton: View {
 
 // A preview of the GlowButton with a size of 60.
 #Preview {
-    GlowButton(isTriggered: .constant(false), size: 60) { _ in }
+    GlowButton(size: 60)
 }
