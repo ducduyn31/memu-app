@@ -21,7 +21,8 @@ struct HistoryListItem: View {
         CustomNavLink (
             title: "Conversation",
             destination: HistorySessionView(historySession: session!)
-        ) {
+        )
+        {
             ZStack {
                 // The Image displays the avatar of the session.
                 HStack {
