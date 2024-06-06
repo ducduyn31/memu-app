@@ -92,53 +92,6 @@ struct TranslatorView: View {
             viewModel.stopRecordingVideo()
         }
     }
-
-    func startTextUpdateProcess() {
-        // Reset state for restart
-        displayText = ""
-        currentIndex = 0
-        timer?.invalidate() // Invalidate any existing timer
-
-        // Initial delay of 300ms before starting the timer
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { _ in
-                if !isSpeaking{ //check if text to speech is currently active
-                    updateText()
-                }
-            }
-        }
-    }
-
-    func stopTextUpdateProcess() {
-        // Reset state for restart
-        displayText = "Waiting for input..."
-        currentIndex = 0
-        timer?.invalidate() // Invalidate any existing timer
-    }
-
-    // Update the text to be displayed
-    func updateText() {
-        let numberOfWords = Int.random(in: 2...4)
-        let endIndex = min(currentIndex + numberOfWords, fullText.count)
-        let selectedWords = fullText[currentIndex..<endIndex].joined(separator: " ")
-
-        if currentIndex < fullText.count {
-            displayText = currentIndex > 0 ? " \(selectedWords)" : selectedWords
-            //activate text-to-speech
-            engine.speak(string: displayText)
-            currentIndex = endIndex
-
-            //listener for text to speech. isSpeaking will become false when the speech has finished
-            engine.isSpeakingPublisher
-                .sink { isSpeaking in
-                    self.isSpeaking = isSpeaking
-                }
-                .store(in: &cancellables)
-
-        } else {
-            timer?.invalidate() // Stop the timer once we reach the end of the text
-        }
-    }
 }
 
 #Preview {
