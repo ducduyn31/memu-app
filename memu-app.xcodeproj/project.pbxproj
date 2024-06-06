@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1631979B2C081DBB004C5FA0 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1631979A2C081DBB004C5FA0 /* SwitchCameraButton.swift */; };
+		1631979E2C0836BA004C5FA0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1631979D2C0836BA004C5FA0 /* Alamofire */; };
+		16853ACC2C0188C300A3DD77 /* VideoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16853ACB2C0188C300A3DD77 /* VideoDelegate.swift */; };
 		16A2B0802BE9E077007ED34E /* memu_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B07F2BE9E077007ED34E /* memu_appApp.swift */; };
 		16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B0812BE9E077007ED34E /* ContentView.swift */; };
 		16A2B0842BE9E079007ED34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A2B0832BE9E079007ED34E /* Assets.xcassets */; };
@@ -66,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1631979A2C081DBB004C5FA0 /* SwitchCameraButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCameraButton.swift; sourceTree = "<group>"; };
+		16853ACB2C0188C300A3DD77 /* VideoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDelegate.swift; sourceTree = "<group>"; };
 		16A2B07C2BE9E077007ED34E /* memu-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "memu-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A2B07F2BE9E077007ED34E /* memu_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = memu_appApp.swift; sourceTree = "<group>"; };
 		16A2B0812BE9E077007ED34E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE473FCE2BF305C700BD4248 /* SwiftTTSCombine in Frameworks */,
+				1631979E2C0836BA004C5FA0 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +234,7 @@
 				16D7B3362BF1EA30006B72D8 /* CameraService.swift */,
 				16D7B3382BF1EA62006B72D8 /* PhotoDelegate.swift */,
 				16D7B33A2BF1EAB3006B72D8 /* Types.swift */,
+				16853ACB2C0188C300A3DD77 /* VideoDelegate.swift */,
 			);
 			path = VideoCapture;
 			sourceTree = "<group>";
@@ -288,12 +295,13 @@
 			path = History;
 			sourceTree = "<group>";
 		};
-		A323504C2BF0A4F700402FB8 /* GlowButton */ = {
+		A323504C2BF0A4F700402FB8 /* Button */ = {
 			isa = PBXGroup;
 			children = (
 				A323504D2BF0A50500402FB8 /* GlowButton.swift */,
+				1631979A2C081DBB004C5FA0 /* SwitchCameraButton.swift */,
 			);
-			path = GlowButton;
+			path = Button;
 			sourceTree = "<group>";
 		};
 		A32350542BF1C0FA00402FB8 /* HistorySessionView */ = {
@@ -330,7 +338,7 @@
 				CE40DD342BF1A67C00F98289 /* SImpleButton */,
 				CE40DD312BF1A60E00F98289 /* AppTextfield */,
 				CE40DD2A2BF1A53100F98289 /* NavBar */,
-				A323504C2BF0A4F700402FB8 /* GlowButton */,
+				A323504C2BF0A4F700402FB8 /* Button */,
 				A34A7CAC2BE9E311005AE095 /* Settings */,
 				A32350472BEC7CF500402FB8 /* History */,
 				A32350212BEBAF1800402FB8 /* VideoButton */,
@@ -410,6 +418,7 @@
 			name = "memu-app";
 			packageProductDependencies = (
 				CE473FCD2BF305C700BD4248 /* SwiftTTSCombine */,
+				1631979D2C0836BA004C5FA0 /* Alamofire */,
 			);
 			productName = "memu-app";
 			productReference = 16A2B07C2BE9E077007ED34E /* memu-app.app */;
@@ -485,6 +494,7 @@
 			mainGroup = 16A2B0732BE9E077007ED34E;
 			packageReferences = (
 				CE473FCC2BF305C700BD4248 /* XCRemoteSwiftPackageReference "swift-tts" */,
+				1631979C2C0836BA004C5FA0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 16A2B07D2BE9E077007ED34E /* Products */;
 			projectDirPath = "";
@@ -529,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A32350642BF1D69E00402FB8 /* SentenceItem.swift in Sources */,
+				1631979B2C081DBB004C5FA0 /* SwitchCameraButton.swift in Sources */,
 				A32350662BF1E4B300402FB8 /* selectRandomItems.swift in Sources */,
 				A323504E2BF0A50500402FB8 /* GlowButton.swift in Sources */,
 				A32350282BEBB01100402FB8 /* VideoButton.swift in Sources */,
@@ -560,6 +571,7 @@
 				A32350262BEBAFD400402FB8 /* HistoryListItem.swift in Sources */,
 				CE40DD3C2BF1A75100F98289 /* SubscriptionView.swift in Sources */,
 				16D7B3332BF1E9EE006B72D8 /* CameraViewModel.swift in Sources */,
+				16853ACC2C0188C300A3DD77 /* VideoDelegate.swift in Sources */,
 				CE40DD2E2BF1A54700F98289 /* CustomNavLink.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,6 +739,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Memu;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow access to use the camera for taking photos and videos.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save recorded video";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -769,6 +782,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Memu;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow access to use the camera for taking photos and videos.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save recorded video";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -927,6 +941,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1631979C2C0836BA004C5FA0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		CE473FCC2BF305C700BD4248 /* XCRemoteSwiftPackageReference "swift-tts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/renaudjenny/swift-tts";
@@ -938,6 +960,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1631979D2C0836BA004C5FA0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1631979C2C0836BA004C5FA0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		CE473FCD2BF305C700BD4248 /* SwiftTTSCombine */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE473FCC2BF305C700BD4248 /* XCRemoteSwiftPackageReference "swift-tts" */;

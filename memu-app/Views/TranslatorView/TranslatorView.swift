@@ -7,85 +7,89 @@
 
 import SwiftUI
 import Combine
-import SwiftTTSCombine
 struct TranslatorView: View {
     // Using AppStorage to store the user's name
     // The name will be displayed on the top of the screen
     @AppStorage("name") var name: String = ""
 
     // This text will be updated with the full text over time
-    @State private var displayText = "Waiting for input..."
-    let fullText = """
-    Excuse me, could you help me find where the organic produce section is, and also let me know if you have any gluten-free bread and non-dairy milk options in stock, as well as whether there are any current promotions or discounts on these items?
-    """.components(separatedBy: " ")
-    @State private var currentIndex = 0
-    @State private var timer: Timer? = nil
     @State private var isCapturing = false
-    @State private var isSpeaking = false
     @ObservedObject var viewModel = CameraViewModel()
-    // Using SwiftTTS for text-to-speech functionality
-    let engine: TTSEngine = SwiftTTSCombine.Engine()
+
     @State var cancellables = Set<AnyCancellable>()
     
     var body: some View {
         ZStack {
             VStack {
                 Spacer()
-                HStack {
-                    Text(displayText)
-                        .font(.title)
-                        .foregroundColor(.gray)
-                    Spacer()
+                displayTextView()
+                if viewModel.loading {
+                    loadingView()
+                } else {
+                    cameraPreview()
                 }
-                .padding()
-                CameraPreview(session: viewModel.session)
-                    .frame(height: max( UIScreen.main.bounds.height / 2, 400))
-                HStack {
-                    Rectangle()
-                    .opacity(0)
-                    .frame(width: 60, height: 60)
-                    .cornerRadius(24)
-                    Spacer()
-                    GlowButton(action: {
-                        // Start or stop the text update process based on the current state
-                        if isCapturing {
-                            stopTextUpdateProcess()
-                            isCapturing = false
-                        } else {
-                            startTextUpdateProcess()
-                            isCapturing = true
-                        }
-
-                    }, size: 60)
-                    Spacer()
-                    // Switch camera button
-                    Button(action: {
-                        viewModel.switchCamera()
-                    }) {
-                        ZStack {
-                            Circle()
-                                .frame(width: 50, height: 50)
-                                .foregroundColor(isCapturing ? .gray : .blue) // Gray out the button when capturing
-                                .overlay(
-                                    Circle()
-                                        .stroke(.blue, lineWidth: 4)
-                                        .scaleEffect(1.5)
-                                        .opacity(0)
-                                )
-                            Image(systemName: "arrow.triangle.2.circlepath")
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .contentShape(.circle)
-                    .disabled(isCapturing) // Disable switch camera button when capturing
-                }
-                .padding()
-                .padding(.trailing, 20)
+                actionButtonsView()
             }
-            CustomNavBarView(title: "Hi, \(name)!", initialOffsetY: 85, hasBackButton: false)
+            customNavBarView()
         }
         .onAppear {
+            // Check for camera permissions when the view appears
             viewModel.checkForPermissions()
+        }
+    }
+    
+    @ViewBuilder
+    private func displayTextView() -> some View {
+        HStack {
+            Text(viewModel.translatedText)
+                .font(.title)
+                .foregroundColor(.gray)
+            Spacer()
+        }
+        .padding()
+    }
+    
+    @ViewBuilder
+    private func loadingView() -> some View {
+        Spacer()
+        ProgressView("It should takes 30 seconds")
+        Spacer()
+    }
+    
+    @ViewBuilder
+    private func cameraPreview() -> some View {
+        CameraPreview(session: viewModel.session)
+            .frame(height: max( UIScreen.main.bounds.height / 2, 400))
+    }
+    
+    @ViewBuilder
+    private func actionButtonsView() -> some View {
+        HStack {
+            Spacer()
+            Spacer().frame(width: 60)
+            GlowButton(isTriggered: $isCapturing, disabled: viewModel.loading, size: 60) { triggered in
+                handleGlowButtonPress(triggered)
+            }
+            Spacer()
+            // Switch camera button
+            SwitchCameraButton(switchable: !isCapturing) {
+                viewModel.switchCamera()
+            }
+        }
+        .padding()
+        .padding(.trailing, 20)
+    }
+    
+    @ViewBuilder
+    private func customNavBarView() -> some View {
+        CustomNavBarView(title: "Hi, \(name)!", initialOffsetY: 85, hasBackButton: false)
+    }
+    
+    private func handleGlowButtonPress(_ triggered: Bool?) {
+        if triggered != nil && triggered! {
+            viewModel.startRecordingVideo()
+        } else {
+            viewModel.stopRecordingVideo()
         }
     }
 

@@ -32,9 +32,7 @@ struct HistorySessionView: View {
                 SentenceList(historySession: historySession)
             }
             .padding(.top, 150)
-            Title(label: "Conversation")
-                .ignoresSafeArea()
-                .position(x: 214.9, y: 50)
+            CustomNavBarView(title: "Conversation", initialOffsetY: 85, hasBackButton: true)
                 
         }
     }
