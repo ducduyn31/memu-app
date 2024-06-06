@@ -21,8 +21,8 @@ struct SettingsView: View {
     ]
     
     var body: some View {
-        NavigationStack{
-            ZStack {
+        ZStack {
+            NavigationStack{
                 VStack {
                     HStack {
                         Image("Avatar6")
@@ -43,11 +43,8 @@ struct SettingsView: View {
                     Spacer()
                 }
                 .padding(.top, 150)
-                // Displaying a custom navigation bar with the title "Settings"
-                // The back button is hidden in the settings view
-                CustomNavBarView(title: "Settings", initialOffsetY: 85, hasBackButton: false)
             }
-            .ignoresSafeArea()
+            CustomNavBarView(title: "Settings", initialOffsetY: 85, hasBackButton: false)
         }
     }
 }

@@ -24,10 +24,13 @@ class CameraService : ObservableObject {
     let captureSession = AVCaptureSession()
     private let photoOutput = AVCapturePhotoOutput()
     private var videoDeviceInput: AVCaptureDeviceInput?
+    private var videoOutput: AVCaptureMovieFileOutput?
     private var position = AVCaptureDevice.Position.back
     
     private let sessionQueue = DispatchQueue(label: "mimuai.session.queue")
-    private var cameraDelegate: PhotoDelegate?
+    private var photoDelegate: PhotoDelegate?
+    private var videoDelegate: VideoDelegate?
+    var videoOutputURL: URL?
     
     func configureSession() {
         sessionQueue.async { [weak self] in
@@ -37,6 +40,7 @@ class CameraService : ObservableObject {
             self.captureSession.sessionPreset = .photo
             
             self.setupVideoInput()
+            self.setupPhotoOutput()
             self.setupVideoOutput()
             
             self.captureSession.commitConfiguration()
@@ -71,13 +75,24 @@ class CameraService : ObservableObject {
         }
     }
     
-    private func setupVideoOutput() {
+    private func setupPhotoOutput() {
         if captureSession.canAddOutput(photoOutput) {
             captureSession.addOutput(photoOutput)
             
             photoOutput.maxPhotoQualityPrioritization = .quality
             
             status = .success
+        } else {
+            status = .failed
+            captureSession.commitConfiguration()
+        }
+    }
+    
+    private func setupVideoOutput() {
+        videoOutput = AVCaptureMovieFileOutput()
+                
+        if captureSession.canAddOutput(videoOutput!) {
+            captureSession.addOutput(videoOutput!)
         } else {
             status = .failed
             captureSession.commitConfiguration()
@@ -132,14 +147,81 @@ class CameraService : ObservableObject {
             settings.maxPhotoDimensions = .init(width: 4032, height: 3024)
             settings.photoQualityPrioritization = .quality
             
-            cameraDelegate = PhotoDelegate { result in
+            photoDelegate = PhotoDelegate { result in
                 print("Image captured")
             }
             
-            if let cameraDelegate {
-                self.photoOutput.capturePhoto(with: settings, delegate: cameraDelegate)
+            if let photoDelegate {
+                self.photoOutput.capturePhoto(with: settings, delegate: photoDelegate)
             }
             
+        }
+    }
+    
+    func startRecording() {
+        sessionQueue.async { [weak self] in
+            guard let self, let videoOutput = self.videoOutput else { return }
+            
+            if !videoOutput.isRecording {
+                let outputFileName = UUID().uuidString
+                let outputFilePath = NSTemporaryDirectory() + outputFileName + ".mov"
+                let fileURL = URL(fileURLWithPath: outputFilePath)
+                
+                videoDelegate = VideoDelegate { result, error in
+                    if let resultURL = result {
+                        self.convertMovToMp4(sourceURL: resultURL) { outputURL in
+                            if let outputURL {
+                                self.videoOutputURL = outputURL
+                            }
+                        }
+                    }
+                }
+                
+                if let videoDelegate {
+                    self.videoOutputURL = fileURL
+                    videoOutput.startRecording(to: fileURL, recordingDelegate: videoDelegate)
+                }
+            }
+        }
+    }
+    
+    func stopRecording() {
+        sessionQueue.async { [weak self] in
+            guard let self, let videoOutput = self.videoOutput else { return }
+            
+            if videoOutput.isRecording {
+                videoOutput.stopRecording()
+            }
+        }
+    }
+    
+    private func convertMovToMp4(sourceURL: URL, completion: @escaping (URL?) -> Void) {
+        let asset = AVAsset(url: sourceURL)
+        let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality)
+        
+        let outputFileName = UUID().uuidString
+        let outputFilePath = NSTemporaryDirectory() + outputFileName + ".mp4"
+        let outputURL = URL(fileURLWithPath: outputFilePath)
+        
+        exportSession?.outputURL = outputURL
+        exportSession?.outputFileType = .mp4
+        exportSession?.exportAsynchronously {
+            switch exportSession?.status {
+            case .completed:
+                print("Export completed successfully.")
+                completion(outputURL)
+            case .failed:
+                if let error = exportSession?.error {
+                    print("Export failed: \(error.localizedDescription)")
+                }
+                completion(nil)
+            case .cancelled:
+                print("Export cancelled.")
+                completion(nil)
+            default:
+                print("Export encountered an unknown status.")
+                completion(nil)
+            }
         }
     }
     
