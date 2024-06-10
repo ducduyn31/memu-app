@@ -35,13 +35,13 @@ struct HistoryListItem: View {
                         // The Text displays the last time the session was active.
                         HStack {
                             Spacer()
-                            Text(session?.lastTime ?? "")
+                            Text(session?.getLastTime() ?? "")
                                 .font(.subheadline)
                         }
                         .padding([.top, .trailing], 20)
                         // The Text displays the last message in the session.
                         HStack {
-                            Text(session?.lastMessage ?? "")
+                            Text(session?.getLastMessage() ?? "")
                                 .font(.body)
                                 .foregroundColor(.black)
                                 .fontWeight(.regular)

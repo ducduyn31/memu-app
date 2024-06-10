@@ -8,21 +8,28 @@
 import SwiftUI
 
 struct HistoryList: View {
-    @Binding var history: [HistorySession]
+    @StateObject var historymanager = HistoryManager()
     
     var body: some View {
         NavigationStack {
             List{
-                ForEach(history) { historySession in
+                ForEach(historymanager.historySessions) { historySession in
                     HistoryListItem(session: historySession)
                 }
                 .onDelete(perform: delete) // Enable swipe to delete
             }
         }
+        .task {
+            try? await historymanager.loadHistory()
+        }
     }
     
     // Function to delete a conversation from the history list
     func delete(at offsets: IndexSet) {
-        history.remove(atOffsets: offsets)
+        historymanager.historySessions.remove(atOffsets: offsets)
     }
+}
+
+#Preview {
+   HistoryList()
 }
