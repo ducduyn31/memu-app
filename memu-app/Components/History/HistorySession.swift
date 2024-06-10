@@ -8,35 +8,47 @@
 import Foundation
 import SwiftUI
 
+struct Message: Identifiable, Codable, Hashable {
+    let id: Int?
+    let content: String
+    let time: Date
+    
+    enum CodingKeys: String, CodingKey{
+        case id = "id"
+        case content = "content"
+        case time = "created_at"
+    }
+}
+
 // HistorySession is a struct that represents a history session.
-struct HistorySession: Identifiable {
-    var id = UUID()   // Unique identifier for each history session
+struct HistorySession: Identifiable, Codable, Hashable {
+    var id: Int?   // Unique identifier for each history session
     
     // Default properties for a history session
     var imagePath: String = "Avatar1"  // Path to the image for the session
-    var lastTime: String = "18:18"     // Last time the session was active
-    var lastMessage: String = "Store Apple at Hay Market"  // Last message in the session
-    let videoUrl: String = "https://videos.pexels.com/video-files/5212265/5212265-uhd_3840_2160_25fps.mp4"  // URL to a video related to the session
-    var conversations: [String] = selectRandomItems(from: grocerySentences, count: 20)  // Array of conversation strings in the session
+    var videoUrl: String
+    var messages: [Message]
     
-    // Initializer that takes an array of conversation strings
-    init(conversations: [String]) {
-        self.conversations = conversations
+    enum CodingKeys: String, CodingKey{
+        case id = "id"
+        case messages = "message"
+        case videoUrl = "video"
     }
     
-    // Initializer that takes an image path, last time, and last message
-    init(imagePath: String, lastTime: String, lastMessage: String) {
+    func getLastMessage() -> String{
+        return messages.last?.content ?? "";
+    }
+    
+    func getLastTime() -> String{
+        var dateFormatter = DateFormatter();
+        dateFormatter.dateFormat = "hh:mm"
+        return dateFormatter.string(from: messages.last?.time ?? Date())
+    }
+    
+    init(imagePath: String, lastTime: String, lastMessage: String){
         self.imagePath = imagePath
-        self.lastTime = lastTime
-        self.lastMessage = lastMessage
-    }
-    
-    // Default initializer that sets the conversations to a default array of strings
-    init() {
-        self.conversations = [
-            "Ask about our catering services for your next event.",
-            "Visit our bakery for custom cake designs.",
-            "Our store is committed to sustainability and green practices.",
-        ]
+        messages = [Message(id: 1, content: lastMessage, time: Date())]
+        id = 1
+        videoUrl = "https://nqoqcwftrvbqelynyuuw.supabase.co/storage/v1/object/public/video/20240610/sample.mp4"
     }
 }

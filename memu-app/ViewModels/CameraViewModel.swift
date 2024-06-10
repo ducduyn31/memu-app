@@ -87,7 +87,9 @@ class CameraViewModel: ObservableObject {
     func stopRecordingVideo() {
         cameraManager.stopRecording()
         self.translatedText = "Processing..."
-        uploadVideo(url: cameraManager.videoOutputURL!)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.uploadVideo(url: self.cameraManager.videoOutputURL!)
+        }
     }
     
     func uploadVideo(url: URL) {
