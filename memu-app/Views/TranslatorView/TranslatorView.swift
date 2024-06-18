@@ -15,7 +15,8 @@ struct TranslatorView: View {
     // This text will be updated with the full text over time
     @State private var isCapturing = false
     @ObservedObject var viewModel = CameraViewModel()
-
+    @ObservedObject var messageService = MessageFakingService()
+    
     @State var cancellables = Set<AnyCancellable>()
     
     var body: some View {
@@ -23,7 +24,7 @@ struct TranslatorView: View {
             VStack {
                 Spacer()
                 displayTextView()
-                if viewModel.loading {
+                if messageService.isLoading {
                     loadingView()
                 } else {
                     cameraPreview()
@@ -41,7 +42,7 @@ struct TranslatorView: View {
     @ViewBuilder
     private func displayTextView() -> some View {
         HStack {
-            Text(viewModel.translatedText)
+            Text(messageService.lastMessage)
                 .font(.title)
                 .foregroundColor(.gray)
             Spacer()
@@ -52,7 +53,7 @@ struct TranslatorView: View {
     @ViewBuilder
     private func loadingView() -> some View {
         Spacer()
-        ProgressView("It should takes 30 seconds")
+        ProgressView("It should takes few seconds")
         Spacer()
     }
     
@@ -87,9 +88,14 @@ struct TranslatorView: View {
     
     private func handleGlowButtonPress(_ triggered: Bool?) {
         if triggered != nil && triggered! {
-            viewModel.startRecordingVideo()
+            // Subscribe to the realtime message
+            Task {
+                await messageService.subscribeRealtimeMessage()
+            }
         } else {
-            viewModel.stopRecordingVideo()
+            Task {
+                await messageService.unSubscribeRealtimeMessage()
+            }
         }
     }
 }

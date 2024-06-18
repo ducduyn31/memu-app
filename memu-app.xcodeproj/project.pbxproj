@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1631979B2C081DBB004C5FA0 /* SwitchCameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1631979A2C081DBB004C5FA0 /* SwitchCameraButton.swift */; };
 		1631979E2C0836BA004C5FA0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1631979D2C0836BA004C5FA0 /* Alamofire */; };
+		1671B5602C215E0600AB2290 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 1671B55F2C215E0600AB2290 /* Realtime */; };
 		16853ACC2C0188C300A3DD77 /* VideoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16853ACB2C0188C300A3DD77 /* VideoDelegate.swift */; };
 		16A2B0802BE9E077007ED34E /* memu_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B07F2BE9E077007ED34E /* memu_appApp.swift */; };
 		16A2B0822BE9E077007ED34E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A2B0812BE9E077007ED34E /* ContentView.swift */; };
@@ -49,7 +50,7 @@
 		CE40DD362BF1A69200F98289 /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD352BF1A69200F98289 /* SimpleButton.swift */; };
 		CE40DD3A2BF1A74600F98289 /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD392BF1A74600F98289 /* EditAccountView.swift */; };
 		CE40DD3C2BF1A75100F98289 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40DD3B2BF1A75100F98289 /* SubscriptionView.swift */; };
-		CE88BFCD2C16B545000AFE37 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88BFCC2C16B545000AFE37 /* SupabaseService.swift */; };
+		CE88BFCD2C16B545000AFE37 /* MessageFakingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE88BFCC2C16B545000AFE37 /* MessageFakingService.swift */; };
 		CE88BFCF2C16B622000AFE37 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = CE88BFCE2C16B622000AFE37 /* Auth */; };
 		CE88BFD32C16B622000AFE37 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = CE88BFD22C16B622000AFE37 /* PostgREST */; };
 		CE88BFD72C16B622000AFE37 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = CE88BFD62C16B622000AFE37 /* Storage */; };
@@ -119,7 +120,7 @@
 		CE40DD352BF1A69200F98289 /* SimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		CE40DD392BF1A74600F98289 /* EditAccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
 		CE40DD3B2BF1A75100F98289 /* SubscriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
-		CE88BFCC2C16B545000AFE37 /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
+		CE88BFCC2C16B545000AFE37 /* MessageFakingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFakingService.swift; sourceTree = "<group>"; };
 		CE88BFDA2C16B85F000AFE37 /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1671B5602C215E0600AB2290 /* Realtime in Frameworks */,
 				CE2BB0E12C11840C00CC72E8 /* SwiftTTSCombine in Frameworks */,
 				1631979E2C0836BA004C5FA0 /* Alamofire in Frameworks */,
 				CE88BFD72C16B622000AFE37 /* Storage in Frameworks */,
@@ -417,7 +419,7 @@
 		CE88BFCA2C16B43C000AFE37 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				CE88BFCC2C16B545000AFE37 /* SupabaseService.swift */,
+				CE88BFCC2C16B545000AFE37 /* MessageFakingService.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -445,6 +447,7 @@
 				CE88BFD22C16B622000AFE37 /* PostgREST */,
 				CE88BFD62C16B622000AFE37 /* Storage */,
 				CE88BFD82C16B622000AFE37 /* Supabase */,
+				1671B55F2C215E0600AB2290 /* Realtime */,
 			);
 			productName = "memu-app";
 			productReference = 16A2B07C2BE9E077007ED34E /* memu-app.app */;
@@ -578,7 +581,7 @@
 				CE40DD2F2BF1A54700F98289 /* CustomNavBarContainerView.swift in Sources */,
 				16D7B3372BF1EA30006B72D8 /* CameraService.swift in Sources */,
 				CE40DD302BF1A54700F98289 /* CustomNavBarView.swift in Sources */,
-				CE88BFCD2C16B545000AFE37 /* SupabaseService.swift in Sources */,
+				CE88BFCD2C16B545000AFE37 /* MessageFakingService.swift in Sources */,
 				949DA73E2BEF4E1F008F12B5 /* TranslatorView.swift in Sources */,
 				16A2B0802BE9E077007ED34E /* memu_appApp.swift in Sources */,
 				A32350242BEBAF9C00402FB8 /* HistoryList.swift in Sources */,
@@ -762,7 +765,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"memu-app/Preview Content\"";
-				DEVELOPMENT_TEAM = 47YZL958GJ;
+				DEVELOPMENT_TEAM = C4A2XPYW33;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -805,7 +808,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"memu-app/Preview Content\"";
-				DEVELOPMENT_TEAM = 47YZL958GJ;
+				DEVELOPMENT_TEAM = C4A2XPYW33;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1001,6 +1004,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1631979C2C0836BA004C5FA0 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		1671B55F2C215E0600AB2290 /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE88BFCB2C16B52C000AFE37 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
 		};
 		CE2BB0E02C11840C00CC72E8 /* SwiftTTSCombine */ = {
 			isa = XCSwiftPackageProductDependency;

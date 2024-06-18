@@ -10,6 +10,7 @@ import AVFoundation
 import SwiftUI
 import SwiftTTSCombine
 import Alamofire
+import Supabase
 
 class CameraViewModel: ObservableObject {
     
